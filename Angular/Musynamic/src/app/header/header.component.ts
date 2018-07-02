@@ -8,12 +8,13 @@ import { Header } from '../header';
 })
 export class HeaderComponent implements OnInit {
 
-@Input() header : Header
+  head : Header = new Header("Connexion","Inscription");
+
  
 constructor() { 
-
-  connexion : "Connexion";
-  inscription : "inscription";
+   
+  
+  
   }
 
   ngOnInit() {

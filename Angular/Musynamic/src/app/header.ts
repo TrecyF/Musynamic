@@ -3,10 +3,10 @@ export class Header {
     connexion : string;
     inscription : string;
 
-    constructor(logo : string, connexion : string, insciption : string){
-        this.logo = logo;
+    constructor(connexion : string, inscription : string){
         this.connexion = connexion;
-        this.inscription = this.inscription;
+        this.inscription = inscription;
+        this.logo = require('../img/logo.png');
     }
 
 }
