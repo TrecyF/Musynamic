@@ -24,6 +24,7 @@
     "@angular/router": "^6.0.3",
     "@mdi/angular-material": "^2.4.85",
     "@mdi/font": "^2.4.85",
+    "angular-bootstrap-md": "^6.1.5",
     "angular2-materialize": "^15.1.10",
     "core-js": "^2.5.4",
     "materialize-css": "^0.100.2",

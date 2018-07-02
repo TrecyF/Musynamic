@@ -1,3 +1,5 @@
+declare var require: any;
+
 export class Header {
     logo : string;
     connexion : string;
