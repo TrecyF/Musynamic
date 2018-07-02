@@ -1,12 +1,13 @@
-package app.model;
+package app.musynamic.model;
 
 import javax.persistence.AssociationOverride;
 import javax.persistence.AssociationOverrides;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.Transient;
 
-import org.springframework.data.annotation.Transient;
+
 
 @Entity
 @AssociationOverrides({
@@ -15,6 +16,7 @@ import org.springframework.data.annotation.Transient;
     @AssociationOverride(name = "primaryKey.commande",
         joinColumns = @JoinColumn(name = "idCommande")) })
 public class ProduitCommande {
+	
     // composite-id key
     private ProduitCommandeId primaryKey = new ProduitCommandeId();
      
@@ -28,20 +30,20 @@ public class ProduitCommande {
     
     @Transient
     public Produit getProduit() {
-        return getPrimaryKey().getProd();
+        return getPrimaryKey().getProduit();
     }
  
-    public void setProduit(Produit prod) {
-        getPrimaryKey().setProd(prod);
+    public void setProduit(Produit produit) {
+        getPrimaryKey().setProduit(produit);
     }
  
     @Transient
-    public Commande getComm() {
-        return getPrimaryKey().getComm();
+    public Commande getCommande() {
+        return getPrimaryKey().getCommande();
     }
  
-    public void setComm(Commande comm) {
-        getPrimaryKey().setComm(comm);
+    public void setCommande(Commande commande) {
+        getPrimaryKey().setCommande(commande);
     }
  
  
@@ -57,6 +59,4 @@ public class ProduitCommande {
 		this.quantite = quantite;
 	}
     
-    
-	
 }

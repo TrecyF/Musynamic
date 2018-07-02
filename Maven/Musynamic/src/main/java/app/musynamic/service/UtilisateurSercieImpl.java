@@ -31,7 +31,7 @@ public class UtilisateurSercieImpl implements  UtilisateurService {
 
 
 	@Override
-	public void addUtilisateur(String nom, String prenom, String adresse, int telephone, String email,
+	public void addUtilisateur(String nom, String prenom, String adresse, String telephone, String email,
 			LocalDate date_de_naissance, String mot_de_passe, String droit) {
 
         Utilisateur newUser = new Utilisateur();

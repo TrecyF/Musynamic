@@ -11,7 +11,7 @@ public interface UtilisateurService {
 	String nom,
 	String prenom,
 	String adresse,
-	int telephone,
+	String telephone,
 	String email,
 	LocalDate date_de_naissance,
 	String mot_de_passe,

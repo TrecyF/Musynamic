@@ -1,30 +1,35 @@
-package app.model;
+package app.musynamic.model;
 
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
 
-
 @Embeddable
-public class ProduitCommandeId {
-	
-	private Produit prod;
-    private Commande comm;
- 
-    @ManyToOne
-    public Produit getProd() {
-        return prod;
-    }
- 
-    public void setProd(Produit prod) {
-        this.prod = prod;
-    }
- 
-    @ManyToOne
-    public Commande getComm() {
-        return comm;
-    }
- 
-    public void setComm(Commande comm) {
-        this.comm = comm;
-    }
+public class ProduitCommandeId implements Serializable {
+
+	private Produit produit;
+
+    private Commande commande;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+	public Produit getProduit() {
+		return produit;
+	}
+
+  
+	public void setProduit(Produit produit) {
+		this.produit = produit;
+	}
+
+    @ManyToOne(cascade = CascadeType.ALL)
+	public Commande getCommande() {
+		return commande;
+	}
+
+    
+	public void setCommande(Commande commande) {
+		this.commande = commande;
+	}
 }

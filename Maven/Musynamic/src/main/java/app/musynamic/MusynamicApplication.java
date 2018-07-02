@@ -29,7 +29,7 @@ public class MusynamicApplication implements CommandLineRunner {
     			"Astier", 
     			"Florent", 
     			"605 Saint Laurent des arbres", 
-    			0631731014, 
+    			"0631731014", 
     			"astierflorent@gmail.com", 
     			LocalDate.of(2016, 06, 26), 
     			"jaimeLaFondue123", 
