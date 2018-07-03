@@ -8,7 +8,7 @@ export class Header {
     constructor(connexion : string, inscription : string){
         this.connexion = connexion;
         this.inscription = inscription;
-        this.logo = require('../img/logo.png');
+        this.logo = require('../img/logo4.png');
     }
 
 }
