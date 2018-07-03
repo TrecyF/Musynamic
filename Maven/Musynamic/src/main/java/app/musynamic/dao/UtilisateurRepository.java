@@ -12,5 +12,6 @@ import app.musynamic.model.Utilisateur;
 public interface UtilisateurRepository extends CrudRepository<Utilisateur, String> {
 
 	public List<Utilisateur> findByNom(String nom); //https://docs.spring.io/spring-data/jpa/docs/current/reference/html/ 5.3.2. Query Creation
-
+	
+	public List<Utilisateur> findByEmail(String email);
 }
