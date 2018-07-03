@@ -1,28 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,NO_ERRORS_SCHEMA } from '@angular/core';
 import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { NavbarModule, WavesModule } from 'angular-bootstrap-md';
+import { HttpClientModule } from '@angular/common/http'; 
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { LoginService } from './login-service.service';
+import { FooterComponent } from './footer/footer.component';
+import { PresentationProduitComponent } from './presentation-produit/presentation-produit.component';
+import { CarouselImg } from './carousel/carousel-img';
+import { AdministrateurComponent } from './administrateur/administrateur.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LoginComponent
-    
+    LoginComponent,
+    FooterComponent,
+    PresentationProduitComponent,
+    CarouselImg,
+    AdministrateurComponent
   ],
   imports: [
     BrowserModule,
     MaterializeModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MDBBootstrapModule.forRoot(),
+    NavbarModule, WavesModule
   ],
+  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [LoginService],
   bootstrap: [AppComponent]
 })
