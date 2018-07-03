@@ -15,6 +15,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -63,12 +64,13 @@ public class UtilisateurController {
 		
 	}
 	
-	@RequestMapping(value = "login", produces = "application/json")
-	 public String submitUtilisateur(@ModelAttribute("utilisateur") Utilisateur utilisateurForm, ModelMap model ) {    
-	        model.addAttribute("utilisateur" , utilisateurForm);       
-	 
-	         return "Utilisateur enregistré";
-	    }
+	@RequestMapping(value = "login", consumes = "application/json")
+			public void form(@RequestBody Utilisateur utilisateur) {
+		
+				
+				
+			}
+	    
 	
 //	@GetMapping("utilisateur/{id}")
 //	public User findOwner(@PathVariable("id") int theId) throws ParseException {
