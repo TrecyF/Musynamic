@@ -1,5 +1,6 @@
-package app.model;
+package app.musynamic.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,14 +8,16 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Utilisateur {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idNumClient;
 
 	@Column
@@ -26,13 +29,13 @@ public class Utilisateur {
 	private String adresse;
 	
 	@Column
-	private int telephone;
+	private String telephone;
 	
 	@Column
 	private String email;
 	
 	@Column
-	private Date date_de_naissance;
+	private LocalDate date_de_naissance;
 	
 	@Column
 	private String mot_de_passe;
@@ -40,17 +43,16 @@ public class Utilisateur {
 	@Column
 	private String droit;
 	
-	@ManyToMany
+	@OneToMany(mappedBy = "utilCommande")
 	private List<Commande> commandes = new ArrayList<>();
 
 	public Utilisateur() {
 		
 	}
 	
-	public Utilisateur(int idNumClient, String nom, String prenom, String adresse, int telephone, String email,
-			Date date_de_naissance, String mot_de_passe, String droit) {
+	public Utilisateur(String nom, String prenom, String adresse, String telephone, String email,
+			LocalDate date_de_naissance, String mot_de_passe, String droit) {
 		super();
-		this.idNumClient = idNumClient;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
@@ -93,11 +95,11 @@ public class Utilisateur {
 		this.adresse = adresse;
 	}
 
-	public int getTelephone() {
+	public String getTelephone() {
 		return telephone;
 	}
 
-	public void setTelephone(int telephone) {
+	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
 
@@ -109,11 +111,11 @@ public class Utilisateur {
 		this.email = email;
 	}
 
-	public Date getDate_de_naissance() {
+	public LocalDate getDate_de_naissance() {
 		return date_de_naissance;
 	}
 
-	public void setDate_de_naissance(Date date_de_naissance) {
+	public void setDate_de_naissance(LocalDate date_de_naissance) {
 		this.date_de_naissance = date_de_naissance;
 	}
 

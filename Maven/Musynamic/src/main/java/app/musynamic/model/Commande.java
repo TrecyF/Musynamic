@@ -1,14 +1,14 @@
-package app.model;
+package app.musynamic.model;
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -17,10 +17,8 @@ import javax.persistence.OneToMany;
 @Entity
 public class Commande {
 	
-	private Set<ProduitCommande> prodCommande = new HashSet<ProduitCommande>();
-	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idCommande;
 
 	@Column
@@ -37,18 +35,34 @@ public class Commande {
 	
 	@ManyToOne
 	private Utilisateur utilCommande;
-	
-    @OneToMany(mappedBy = "primaryKey.group")
-    public Set<ProduitCommande> getprodComm() {
-        return prodCommande;
-    }
-	
-	public Set<ProduitCommande> getProdCommande() {
-		return prodCommande;
+
+    @OneToMany(mappedBy = "primaryKey.commande", cascade = CascadeType.ALL, targetEntity = ProduitCommande.class)
+	private Set<ProduitCommande> produitCommandes = new HashSet<ProduitCommande>();
+
+	public Set<ProduitCommande> getProduitCommandes() {
+		return produitCommandes;
 	}
 
-	public void setProdCommande(Set<ProduitCommande> prodCommande) {
-		this.prodCommande = prodCommande;
+	public void setProduitCommandes(Set<ProduitCommande> produitCommandes) {
+		this.produitCommandes = produitCommandes;
+	}
+	
+    public void addUserGroup(ProduitCommande prodcomm) {
+        this.produitCommandes.add(prodcomm);
+    }  
+
+	public Commande() {
+		
+	}
+
+	public Commande(Date date_debut, Date date_fin, int prix_total,
+			String adresse_livraison, Utilisateur utilCommande) {
+		super();
+		this.date_debut = date_debut;
+		this.date_fin = date_fin;
+		this.prix_total = prix_total;
+		this.adresse_livraison = adresse_livraison;
+		this.utilCommande = utilCommande;
 	}
 
 	public Utilisateur getUtilCommande() {
@@ -56,22 +70,6 @@ public class Commande {
 	}
 
 	public void setUtilCommande(Utilisateur utilCommande) {
-		this.utilCommande = utilCommande;
-	}
-
-	public Commande() {
-		
-	}
-
-	public Commande(Set<ProduitCommande> prodCommande, int idCommande, Date date_debut, Date date_fin, int prix_total,
-			String adresse_livraison, Utilisateur utilCommande) {
-		super();
-		this.prodCommande = prodCommande;
-		this.idCommande = idCommande;
-		this.date_debut = date_debut;
-		this.date_fin = date_fin;
-		this.prix_total = prix_total;
-		this.adresse_livraison = adresse_livraison;
 		this.utilCommande = utilCommande;
 	}
 

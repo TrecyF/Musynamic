@@ -1,29 +1,26 @@
-package app.model;
+package app.musynamic.model;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 
 
 @Entity
 public class Produit {
-	
-	private Set<ProduitCommande> produitCommande = new HashSet<ProduitCommande>();
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idProduit;
 
 	@Column
@@ -50,46 +47,32 @@ public class Produit {
 	
 	@Column
 	private String photo;
+
+    @OneToMany(mappedBy = "primaryKey.produit", cascade = CascadeType.ALL, targetEntity = ProduitCommande.class)
+	private Set<ProduitCommande> produitCommandes = new HashSet<ProduitCommande>();
 	
-	@ManyToMany
-	private List<Commande> commandes = new ArrayList<>();
-	
-    @OneToMany(mappedBy = "primaryKey.user")
-    public Set<ProduitCommande> getprodComm() {
-        return produitCommande;
+    public Set<ProduitCommande> getProduitCommandes() {
+        return produitCommandes;
     }
-	 
 	
-	public Set<ProduitCommande> getProduitCommande() {
-		return produitCommande;
+	public void setProduitCommandes(Set<ProduitCommande> produitCommandes) {
+		this.produitCommandes = produitCommandes;
 	}
-
-
-	public void setProduitCommande(Set<ProduitCommande> produitCommande) {
-		this.produitCommande = produitCommande;
-	}
-
-
-	public List<Commande> getCommandes() {
-		return commandes;
-	}
-
-
-	public void setCommandes(List<Commande> commandes) {
-		this.commandes = commandes;
-	}
-
-
+	
+    public void addGroup(ProduitCommande prod) {
+        this.produitCommandes.add(prod);
+    }
+    
+    public void addUserGroup(ProduitCommande prodcomm) {
+        this.produitCommandes.add(prodcomm);
+    }  
+	
 	public Produit() {
-		
 	}
 
-
-	public Produit(Set<ProduitCommande> produitCommande, int idProduit, String nom, Type type, String description,
-			Date date_de_parution, String interprete, int stock, int prix, String photo, List<Commande> commandes) {
+	public Produit(String nom, Type type, String description,
+			Date date_de_parution, String interprete, int stock, int prix, String photo) {
 		super();
-		this.produitCommande = produitCommande;
-		this.idProduit = idProduit;
 		this.nom = nom;
 		this.type = type;
 		this.description = description;
@@ -98,7 +81,6 @@ public class Produit {
 		this.stock = stock;
 		this.prix = prix;
 		this.photo = photo;
-		this.commandes = commandes;
 	}
 
 
@@ -173,8 +155,4 @@ public class Produit {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	
-	
-	
-	
 }
