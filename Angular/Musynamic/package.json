@@ -25,6 +25,7 @@
     "@mdi/angular-material": "^2.4.85",
     "@mdi/font": "^2.4.85",
     "angular-bootstrap-md": "^6.1.5",
+    "ajv": "^6.5.2",
     "angular2-materialize": "^15.1.10",
     "core-js": "^2.5.4",
     "materialize-css": "^0.100.2",
