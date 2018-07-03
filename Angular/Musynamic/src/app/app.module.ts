@@ -3,31 +3,40 @@ import { NgModule,NO_ERRORS_SCHEMA } from '@angular/core';
 import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { NavbarModule, WavesModule } from 'angular-bootstrap-md';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+
+import { LoginService } from './login-service.service';
 import { FooterComponent } from './footer/footer.component';
 import { PresentationProduitComponent } from './presentation-produit/presentation-produit.component';
 import { CarouselImg } from './carousel/carousel-img';
+import { AdministrateurComponent } from './administrateur/administrateur.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    LoginComponent,
     FooterComponent,
     PresentationProduitComponent,
-    CarouselImg
+    CarouselImg,
+    AdministrateurComponent
   ],
   imports: [
     BrowserModule,
     MaterializeModule,
+    FormsModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    HttpClientModule
+    NavbarModule, WavesModule
   ],
-  
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
