@@ -45,12 +45,17 @@ public class UtilisateurSercieImpl implements UtilisateurService {
 
 	}
 
-	@Override
+	
 	public Utilisateur utilisateurFindByEmail(String email) {
 
-		Utilisateur user = (Utilisateur) utilisateurRepository.findByEmail(email);
+		Utilisateur user;
+		List<Utilisateur> users = utilisateurRepository.findByEmail(email);
+		if (users.isEmpty()) {return null;}
+					
+			else return user = users.get(0);
+			
 
-		return user;
+		
 	}
 
 }

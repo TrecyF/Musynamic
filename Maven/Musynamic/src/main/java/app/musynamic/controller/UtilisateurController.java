@@ -73,7 +73,7 @@ public class UtilisateurController {
 //	}
 
 	
-    @RequestMapping(value = "login", consumes = "application/json")
+    @RequestMapping(value = "login", produces = "application/json")
     public Principal util(Principal user) {
        System.out.println(user.getName());
     	return user;

@@ -6,9 +6,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NavbarModule, WavesModule } from 'angular-bootstrap-md';
 import { HttpClientModule } from '@angular/common/http'; 
 
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 
 import { LoginService } from './login-service.service';
@@ -16,6 +16,10 @@ import { FooterComponent } from './footer/footer.component';
 import { PresentationProduitComponent } from './presentation-produit/presentation-produit.component';
 import { CarouselImg } from './carousel/carousel-img';
 import { AdministrateurComponent } from './administrateur/administrateur.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +29,7 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
     FooterComponent,
     PresentationProduitComponent,
     CarouselImg,
-    AdministrateurComponent
+    AdministrateurComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
     FormsModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    NavbarModule, WavesModule
+    NavbarModule,
+    WavesModule,
+    AppRoutingModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [LoginService],

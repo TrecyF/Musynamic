@@ -16,11 +16,11 @@ export class LoginService {
     authenticated = false;
 
     constructor(private http: HttpClient) {
-        this.urlService = 'http://localhost:8086/musynamic/login/';
+        this.urlService = 'http://localhost:8086/musynamic/login';
     }
 
     getLogin() : Observable<Login> {
-        return this.http.get<Login>(this.urlService + '/logins');
+        return this.http.get<Login>(this.urlService);
     }
 
     toLoginUser(formLogin: Login) {

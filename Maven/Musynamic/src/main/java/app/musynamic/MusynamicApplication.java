@@ -33,7 +33,7 @@ public class MusynamicApplication implements CommandLineRunner {
     			"astierflorent@gmail.com", 
     			LocalDate.of(2016, 06, 26), 
     			"jaimeLaFondue123", 
-    			"");
+    			"READ");
     }
 
 }
