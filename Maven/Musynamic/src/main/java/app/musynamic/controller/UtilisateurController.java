@@ -1,5 +1,6 @@
 package app.musynamic.controller;
 
+import java.security.Principal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -64,12 +65,19 @@ public class UtilisateurController {
 		
 	}
 	
-	@RequestMapping(value = "login", consumes = "application/json")
-			public void form(@RequestBody Utilisateur utilisateur) {
-		
-				
-				
-			}
+
+//	@RequestMapping(value = "login", consumes = "application/json")	
+//	public void form(@RequestBody Utilisateur utilisateur) {
+//		
+//		System.out.println(utilisateur.getEmail());
+//	}
+
+	
+    @RequestMapping(value = "login", produces = "application/json")
+    public Principal util(Principal user) {
+       System.out.println(user.getName());
+    	return user;
+    }
 	    
 	
 //	@GetMapping("utilisateur/{id}")

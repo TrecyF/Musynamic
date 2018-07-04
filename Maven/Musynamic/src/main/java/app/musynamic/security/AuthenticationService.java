@@ -1,3 +1,4 @@
+
 package app.musynamic.security;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class AuthenticationService implements UserDetailsService {
 //	@Autowired
 //	private bdd myController;
 	@Autowired
-	private UtilisateurRepository utilisateurRepository;
+	private UtilisateurService utilisateurService;
 
 //	@Override
 //	public UserDetails loadUserByUsername(final String username) {
@@ -46,14 +47,16 @@ public class AuthenticationService implements UserDetailsService {
 	
 		@Override
 	    public UserDetails loadUserByUsername(String email)  throws UsernameNotFoundException {
-	        Utilisateur user = (Utilisateur) utilisateurRepository.findByEmail(email);
+	        Utilisateur user = utilisateurService.utilisateurFindByEmail(email);
 	        System.out.println("User : " + user);
 	        if(user==null){
 	        	System.out.println("User not found");
 	            throw new UsernameNotFoundException("Username not found");
 	        }
-	            return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getMot_de_passe(), 
-	                 true, true, true, true, getGrantedAuthorities(user));
+	        List<GrantedAuthority> rules = new ArrayList<>();
+	        rules = getGrantedAuthorities(user);
+	            return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getMot_de_passe(),
+	            		rules);
 	    }
 		
 	 
@@ -63,7 +66,7 @@ public class AuthenticationService implements UserDetailsService {
 	         
 
 	            System.out.println("UserProfile : " + user);
-	            authorities.add(new SimpleGrantedAuthority("ROLE_"+ user.getDroit()));
+	            authorities.add(new SimpleGrantedAuthority(user.getDroit()));
 	        
 	        System.out.println("authorities : " + user.getDroit());
 	        

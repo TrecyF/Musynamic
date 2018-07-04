@@ -8,7 +8,7 @@ import { Header } from '../header';
 })
 export class HeaderComponent implements OnInit {
 
-  head : Header = new Header("Connexion","Inscription");
+  head : Header = new Header("Connexion","Inscription","Boutique");
 
  
 constructor() { 
@@ -18,6 +18,8 @@ constructor() {
   }
 
   ngOnInit() {
+    this.head
   }
+  
 
 }

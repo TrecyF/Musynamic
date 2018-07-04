@@ -13,17 +13,34 @@ export class LoginService {
     
     login = new Login('', '');
     urlService: string;
+    authenticated = false;
 
     constructor(private http: HttpClient) {
-        this.urlService = 'http://localhost:4200/musynamic/login/';
+        this.urlService = 'http://localhost:8086/musynamic/login';
     }
 
     getLogin() : Observable<Login> {
-        return this.http.get<Login>(this.urlService + '/logins');
+        return this.http.get<Login>(this.urlService);
     }
 
     toLoginUser(formLogin: Login) {
         console.log("Email : " + formLogin.email + ", Password : " + formLogin.password);
         this.http.post<Login>(this.urlService, formLogin, httpOptions).subscribe();
     }
+
+    authenticate(credentials: Login, callback) {
+        const headers = new HttpHeaders(credentials ? {
+            authorization : 'Basic ' + btoa(credentials.email + ':' + credentials.password)
+        } : {});
+
+        this.http.get(this.urlService, {headers: headers}).subscribe(response => {
+            if (response['name']) {
+                this.authenticated = true;
+            } else {
+                this.authenticated = false;
+            }
+            return callback && callback();
+        });
+    }
+
 }

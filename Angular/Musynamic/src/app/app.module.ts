@@ -5,6 +5,7 @@ import { MaterializeModule } from 'angular2-materialize';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NavbarModule, WavesModule } from 'angular-bootstrap-md';
 import { HttpClientModule } from '@angular/common/http'; 
+import { InputsModule } from 'angular-bootstrap-md'
 
 
 import { AppComponent } from './app.component';
@@ -20,6 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { LoginComponent } from './login/login.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { IndexComponent } from './index/index.component';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -32,6 +35,8 @@ import { InscriptionComponent } from './inscription/inscription.component';
     CarouselImg,
     AdministrateurComponent,
     InscriptionComponent,
+    IndexComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ import { InscriptionComponent } from './inscription/inscription.component';
     MDBBootstrapModule.forRoot(),
     NavbarModule,
     WavesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InputsModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [LoginService],
