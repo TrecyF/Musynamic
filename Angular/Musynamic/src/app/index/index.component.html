@@ -1,16 +1,184 @@
-<section id="recherche">
-  <div class="container search">
-    <div class="title">
-        <h1>Vous recherchez un produit ?</h1>
-    </div>
- 
-    <div class="md-form">
-      <input type="search" [(ngModel)]="searchText" placeholder="Recherchez un produit">
-      <button class="btn aqua-gradient btn-rounded btn-sm my-0 waves-effect waves-light" mdbWavesEffect type="submit">Recherche</button>
-    </div>
-    <ul *ngFor="let data of dataset | filter: searchText">
-      <li>{{data}}</li>
-    </ul>
-  </div>
+<header class="h-100">
+    <!--Navbar-->
+    <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav"[containerInside]="true">
+        <logo>
+          <a class="navbar-brand" routerLink="/accueil"><img src="{{head.logo}}"></a>
+          </logo>
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 15px;">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <links>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link waves-light" mdbWavesEffect routerLink="/accueil">Accueil
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect routerLink="/boutique"> {{head.boutique}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect routerLink="/connexion"><i class="fa fa-sign-in"></i> {{head.connexion}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect routerLink="/connexion"><i class="fa fa-user"></i> {{head.inscription}}</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link waves-light" mdbWavesEffect routerLink="/administrateur"> {{head.administrateur}}</a>
+                </li>
+              
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+              <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>
+                  <i class="fa fa-shopping-cart"></i>
+                </a>
+              </li>
+              
+              <li class="nav-item dropdown btn-group" dropdown>
+                <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect><i class="fa fa-user"></i>
+                </a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                  <a class="dropdown-item waves-light" href="#" mdbWavesEffect>Mon compte</a>
+                  <a class="dropdown-item waves-light" href="#" mdbWavesEffect>Mes commandes</a>
+                </div>
+              </li>
+            </ul>
+          </links>
+    </mdb-navbar>
+      <!--/.Navbar -->
+      <div class="view intro-2">
+        <div class="full-bg-img">
+          <div class="mask rgba-purple-light flex-center">
+            <div class="container text-center white-text wow fadeInUp">
+              <h1>Vous recherchez un produit ?</h1>
+              <br>
+              <p>Musynamic est la pour vous aider</p>
+              <br>
+              <form class="form-inline md-form form-sm active-cyan-2">
+                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Rechercher un produit" aria-label="Search" mdbInputDirective>
+                
+                <button class="btn aqua-gradient btn-rounded btn-sm my-0 waves-light" mdbWavesEffect type="submit"><i class="fa fa-search" aria-hidden="true"></i> Rechercher</button>
+              </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.Main -->
+    </header>
 
- </section>
+
+    
+    <div class="container">
+      <!--Section: Products v.4-->
+      <section class="pb-3 text-center ">
+
+        <!--Section heading-->
+        <h2 class="h1 py-5">Our bestsellers</h2>
+        <!--Section description-->
+        <p class="grey-text mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse
+          quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+
+        <!--Grid row-->
+        <div class="row">
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4">
+
+            <!--Collection card-->
+            <div class="card collection-card z-depth-1-half">
+              <!--Card image-->
+              <div class="view zoom waves-light" mdbWavesEffect>
+                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/5.jpg" class="img-fluid" alt="">
+                <div class="stripe dark">
+                  <a>
+                    <p>Red trousers
+                      <i class="fa fa-angle-right"></i>
+                    </p>
+                  </a>
+                </div>
+              </div>
+              <!--Card image-->
+            </div>
+            <!--Collection card-->
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4">
+
+            <!--Collection card-->
+            <div class="card collection-card z-depth-1-half">
+              <!--Card image-->
+              <div class="view zoom waves-light" mdbWavesEffect>
+                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/8.jpg" class="img-fluid" alt="">
+                <div class="stripe light">
+                  <a>
+                    <p>Sweatshirt
+                      <i class="fa fa-angle-right"></i>
+                    </p>
+                  </a>
+                </div>
+              </div>
+              <!--Card image-->
+            </div>
+            <!--Collection card-->
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4">
+
+            <!--Collection card-->
+            <div class="card collection-card z-depth-1-half">
+              <!--Card image-->
+              <div class="view zoom waves-light" mdbWavesEffect>
+                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/9.jpg" class="img-fluid" alt="">
+                <div class="stripe dark">
+                  <a>
+                    <p>Accessories
+                      <i class="fa fa-angle-right"></i>
+                    </p>
+                  </a>
+                </div>
+              </div>
+              <!--Card image-->
+            </div>
+            <!--Collection card-->
+
+          </div>
+          <!--Grid column-->
+
+          <!--Fourth column-->
+          <div class="col-lg-3 col-md-6 mb-4">
+
+            <!--Collection card-->
+            <div class="card collection-card z-depth-1-half">
+              <!--Card image-->
+              <div class="view zoom waves-light" mdbWavesEffect>
+                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/7.jpg" class="img-fluid" alt="">
+                <div class="stripe light">
+                  <a>
+                    <p>Sweatshirt
+                      <i class="fa fa-angle-right"></i>
+                    </p>
+                  </a>
+                </div>
+              </div>
+              <!--Card image-->
+            </div>
+            <!--Collection card-->
+
+          </div>
+          <!--Fourth column-->
+
+        </div>
+        <!--Grid row-->
+
+      </section>
+      <!--Section: Products v.4-->
+    </div>
