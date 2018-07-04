@@ -12,7 +12,7 @@ import app.musynamic.dao.UtilisateurRepository;
 import app.musynamic.model.Utilisateur;
 
 @Service
-public class UtilisateurSercieImpl implements UtilisateurService {
+public class UtilisateurServiceImpl implements UtilisateurService {
 
     @Autowired
     private UtilisateurRepository utilisateurRepository;
