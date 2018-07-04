@@ -16,8 +16,13 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getConnexion();
   }
 
+  getConnexion()  {
+    this.loginService.getLogin()
+    .subscribe(connexion => this.model = connexion);
+  }
   onSubmit() {
       this.loginService.toLoginUser(this.model);
       this.model = new Login('', ''); // insert params for constructor
