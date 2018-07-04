@@ -19,6 +19,7 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
 import { AppRoutingModule } from './app-routing.module';
 
 import { LoginComponent } from './login/login.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { LoginComponent } from './login/login.component';
     PresentationProduitComponent,
     CarouselImg,
     AdministrateurComponent,
+    InscriptionComponent,
   ],
   imports: [
     BrowserModule,

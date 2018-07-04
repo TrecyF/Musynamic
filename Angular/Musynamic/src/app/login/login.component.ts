@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Login } from '../login';
 import { LoginService } from '../login-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,9 @@ import { LoginService } from '../login-service.service';
 export class LoginComponent implements OnInit {
 
   model: Login;
-  constructor(private loginService: LoginService) {
+  modelEmailTemp: string;
+
+  constructor(private loginService: LoginService, private router: Router) {
       this.loginService == loginService;
       this.model = new Login('', ''); // insert params for constructor
   }
@@ -26,5 +29,9 @@ export class LoginComponent implements OnInit {
   onSubmit() {
       this.loginService.toLoginUser(this.model);
       this.model = new Login('', ''); // insert params for constructor
+  }
+
+  onSubmitInsc() {
+    this.router.navigate(['/inscription', { email: this.modelEmailTemp }]);
   }
 }
