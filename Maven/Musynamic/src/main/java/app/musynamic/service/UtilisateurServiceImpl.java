@@ -2,6 +2,7 @@ package app.musynamic.service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +12,11 @@ import app.musynamic.dao.UtilisateurRepository;
 import app.musynamic.model.Utilisateur;
 
 @Service
-public class UtilisateurSerciveImpl implements  UtilisateurService {
-	
+public class UtilisateurSercieImpl implements UtilisateurService {
 
     @Autowired
     private UtilisateurRepository utilisateurRepository;
+
 
 
 	public List<String> getAllUsersByName(String nom) {
@@ -48,5 +49,12 @@ public class UtilisateurSerciveImpl implements  UtilisateurService {
 	}
 	
 
+	@Override
+	public Utilisateur utilisateurFindByEmail(String email) {
+
+		Utilisateur user = (Utilisateur) utilisateurRepository.findByEmail(email);
+
+		return user;
+	}
 
 }

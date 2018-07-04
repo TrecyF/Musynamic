@@ -1,11 +1,55 @@
-<nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo"><img src="{{head.logo}}"></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">{{head.connexion}}</a></li>
-        <li><a href="badges.html">{{head.inscription}}</a></li>
-        <li><a href="sass.html"><i class="fa reorder" aria-hidden="true"></i></a></li>
-        <li><a href=""><i class="fa shopping-cart" aria-hidden="true"></i></a></li>
-      </ul>
-    </div>
-  </nav>
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark ">
+    <logo>
+  <a class="navbar-brand" href="/accueil"><img src="{{head.logo}}"></a></logo>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 15px;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <links>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link waves-light" mdbWavesEffect href="/accueil">Accueil
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect href="/connexioninscription"><i class="fa fa-sign-in"></i> {{head.connexion}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect href="/connexioninscription"><i class="fa fa-user"></i> {{head.inscription}}</a>
+          </li>
+          
+        </ul>
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>
+              <i class="fa fa-shopping-cart"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>
+              <i class="fa fa-reorder"></i>
+            </a>
+          </li>
+          <li class="nav-item dropdown btn-group" dropdown>
+            <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect><i class="fa fa-user"></i>
+            </a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" href="#" mdbWavesEffect>Mon compte</a>
+              <a class="dropdown-item waves-light" href="#" mdbWavesEffect>Mes commandes</a>
+            </div>
+          </li>
+        </ul>
+      </links>
+</mdb-navbar>
+  <!--/.Navbar -->
+
+  <section id="recherche">
+   <div class="container">
+     <h1>Vous recherchez un produit ?</h1>
+     <form class="form-inline col-sm-12">
+      <input class="form-control col-md-9 col-sm-12" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 col-sm-12" type="submit">Search</button>
+    </form>
+   </div>
+  </section>
