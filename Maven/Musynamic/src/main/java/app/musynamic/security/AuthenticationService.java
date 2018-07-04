@@ -63,7 +63,7 @@ public class AuthenticationService implements UserDetailsService {
 	         
 
 	            System.out.println("UserProfile : " + user);
-	            authorities.add(new SimpleGrantedAuthority("ROLE_"+ user.getDroit()));
+	            authorities.add(new SimpleGrantedAuthority(user.getDroit()));
 	        
 	        System.out.println("authorities : " + user.getDroit());
 	        

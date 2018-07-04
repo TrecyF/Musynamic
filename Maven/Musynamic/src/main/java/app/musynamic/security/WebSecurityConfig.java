@@ -1,5 +1,7 @@
 package app.musynamic.security;
 
+import javax.servlet.Filter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.access.channel.ChannelProcessingFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -22,21 +25,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-	   http
+	  http
        .sessionManagement()
        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-       .and()
-       .authorizeRequests()
-       .antMatchers("/**")
-       .permitAll()
-       .anyRequest()
-       .authenticated()
-       .and()
-       .httpBasic()
-       .and()
-       .csrf()
-       .disable();
+       .and().authorizeRequests().antMatchers("/**").permitAll()
+       .anyRequest().authenticated()
+       .and().httpBasic()
+       .and().csrf().disable()
+	   .exceptionHandling()
+	   .and().addFilterBefore(new WebSecurityCorsFilter(), ChannelProcessingFilter.class);
     		}
+//  @Override
+//  protected void configure(HttpSecurity http) throws Exception {
+//      http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
+//              .antMatchers("/api/**").permitAll().anyRequest().authenticated().and().httpBasic().and().csrf()
+//              .disable().exceptionHandling().and().addFilterBefore(new WebSecurityCorsFilter(), ChannelProcessingFilter.class);
+//  }
+  
   
 //  .authorizeRequests()
 //  .antMatchers("/resources/**", "/signup", "/about").permitAll()
