@@ -1,15 +1,6 @@
-.fond navbar{
-    background: linear-gradient(135deg, #e1bee7,#bbdefb);
-}
-
-#recherche{
-    background-image: url(src/img/venyl.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 500px;
-    background-position: center;
-    margin: 0;
-    padding: 0;
+nav.navbar.navbar-expand-lg.navbar-dark {
+    background: -webkit-linear-gradient(50deg,#e1bee7,#bbdefb)!important;
+    background: -o-linear-gradient(50deg,#e1bee7,#bbdefb)!important;
+    background: linear-gradient(40deg,#e1bee7,#bbdefb)!important;
 }
 

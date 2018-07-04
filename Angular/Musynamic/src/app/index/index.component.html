@@ -1,0 +1,16 @@
+<section id="recherche">
+  <div class="container search">
+    <div class="title">
+        <h1>Vous recherchez un produit ?</h1>
+    </div>
+ 
+    <div class="md-form">
+      <input type="search" [(ngModel)]="searchText" placeholder="Recherchez un produit">
+      <button class="btn aqua-gradient btn-rounded btn-sm my-0 waves-effect waves-light" mdbWavesEffect type="submit">Recherche</button>
+    </div>
+    <ul *ngFor="let data of dataset | filter: searchText">
+      <li>{{data}}</li>
+    </ul>
+  </div>
+
+ </section>
