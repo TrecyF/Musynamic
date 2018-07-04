@@ -1,4 +1,4 @@
-.view {
+header .view {
     background: url("src/img/venyl.jpg")no-repeat center center;
     background-size: cover;
     height: 100vh;
@@ -32,6 +32,29 @@
  :-ms-input-placeholder {  
     color: white; 
  }
+
+ .collection-card .stripe a p{
+    padding: 0;
+    margin: 0;
+    letter-spacing: .25rem;
+    color: #eee;
+}
+ 
+.collection-card .stripe {
+    position: absolute;
+    bottom: 3rem;
+    width: 100%;
+    text-align: center;
+    padding: 1.2rem;
+}
+
+.collection-card .stripe.dark {
+    background-color: rgba(0,0,0,.7);
+}
+
+.collection-card .stripe.light {
+    background-color: rgba(255,255,255,.7);
+}
 @media only screen and (max-width: 768px) {
     .navbar {
         background-color: #4285F4;
