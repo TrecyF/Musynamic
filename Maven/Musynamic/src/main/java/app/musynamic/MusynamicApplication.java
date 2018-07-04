@@ -9,6 +9,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import app.musynamic.model.Produit;
+import app.musynamic.model.Type;
+import app.musynamic.service.ProduitService;
 import app.musynamic.service.UtilisateurService;
 
 @SpringBootApplication
@@ -17,7 +20,10 @@ public class MusynamicApplication implements CommandLineRunner {
 	
 	@Autowired
     UtilisateurService utilisateurService;
-
+	
+	@Autowired
+    ProduitService produitService;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(MusynamicApplication.class, args);
 	}
@@ -34,7 +40,18 @@ public class MusynamicApplication implements CommandLineRunner {
     			LocalDate.of(2016, 06, 26), 
     			"jaimeLaFondue123", 
     			"");
-    }
+    
+    	System.out.println("-*------------------------******-------------- **---- **- --- -- jhghkgcjhcjhcjhgchj");
+    	produitService.addProduit(
+			"Album Carlos", 
+			Type.Cd, 
+			"album de Carlos tout nu est tout bronzé",
+			LocalDate.of(1995, 06, 26), 
+			"Carlos", 
+			4000, 
+			10, 
+			"url_photo");
 
+	}
 }
 

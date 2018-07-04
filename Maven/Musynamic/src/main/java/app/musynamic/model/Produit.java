@@ -1,6 +1,6 @@
 package app.musynamic.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,7 +34,7 @@ public class Produit {
 	private String description;
 	
 	@Column
-	private Date date_de_parution;
+	private LocalDate date_de_parution;
 	
 	@Column
 	private String interprete;
@@ -71,7 +71,7 @@ public class Produit {
 	}
 
 	public Produit(String nom, Type type, String description,
-			Date date_de_parution, String interprete, int stock, int prix, String photo) {
+			LocalDate date_de_parution, String interprete, int stock, int prix, String photo) {
 		super();
 		this.nom = nom;
 		this.type = type;
@@ -116,11 +116,11 @@ public class Produit {
 		this.description = description;
 	}
 
-	public Date getDate_de_parution() {
+	public LocalDate getDate_de_parution() {
 		return date_de_parution;
 	}
 
-	public void setDate_de_parution(Date date_de_parution) {
+	public void setDate_de_parution(LocalDate date_de_parution) {
 		this.date_de_parution = date_de_parution;
 	}
 
