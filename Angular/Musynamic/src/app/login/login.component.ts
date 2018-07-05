@@ -11,6 +11,7 @@ import { RouterModule, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   model: Login;
+  modelEmailTemp: string;
 
   constructor(private loginService: LoginService, private router: Router) {
       this.model = new Login('', ''); // insert params for constructor
@@ -24,5 +25,8 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/');});
       return false;
   }
-  
+
+  onSubmitInsc() {
+    this.router.navigate(['/inscription', { email: this.modelEmailTemp }]);
+  }
 }
