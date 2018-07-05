@@ -11,23 +11,18 @@ import { RouterModule, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   model: Login;
+
   constructor(private loginService: LoginService, private router: Router) {
       this.model = new Login('', ''); // insert params for constructor
   }
 
   ngOnInit() {
-    this.getConnexion();
   }
 
-  getConnexion()  {
-    this.loginService.getLogin()
-    .subscribe(connexion => this.model = connexion);
-  }
   onSubmit() {
       this.loginService.authenticate(this.model,  () => {
         this.router.navigateByUrl('/');});
-      this.model = new Login('', ''); // insert params for constructor
-      //return false;
+      return false;
   }
   
 }

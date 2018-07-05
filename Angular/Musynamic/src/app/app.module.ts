@@ -4,7 +4,7 @@ import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NavbarModule, WavesModule } from 'angular-bootstrap-md';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClientXsrfModule, } from '@angular/common/http'; 
 import { InputsModule } from 'angular-bootstrap-md'
 
 
@@ -22,6 +22,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
 import { FilterPipe } from './filter.pipe';
+import { PresentationProduitService } from './presentation-produit.service';
+
+import { AuthInterceptor } from './auth-interceptor';
+
 
 
 @NgModule({
@@ -45,10 +49,19 @@ import { FilterPipe } from './filter.pipe';
     NavbarModule,
     WavesModule,
     AppRoutingModule,
-    InputsModule
+    InputsModule,
+    HttpClientXsrfModule,
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [LoginService],
+  providers: [
+    LoginService,
+    PresentationProduitService,
+  {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

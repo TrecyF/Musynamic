@@ -8,7 +8,7 @@ import { Header } from '../header';
 })
 export class AdministrateurComponent implements OnInit {
 
-  admin : Header = new Header("administrateur","administrateur");
+  //admin : Header = new Header("administrateur","administrateur");
 
   constructor() { }
 

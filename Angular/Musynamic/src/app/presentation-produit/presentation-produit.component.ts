@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { PresentationProduitService } from '../presentation-produit.service';
+
+
 
 @Component({
   selector: 'app-presentation-produit',
@@ -7,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PresentationProduitComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: PresentationProduitService) { }
 
   ngOnInit() {
+    this.service.authenticate();
   }
 
 }

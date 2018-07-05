@@ -5,24 +5,20 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import app.musynamic.model.Utilisateur;
 
 
 @RestController
@@ -72,6 +68,19 @@ public class UtilisateurController {
 //		System.out.println(utilisateur.getEmail());
 //	}
 
+	@RequestMapping("cool")
+	public Principal helloworld(HttpServletRequest request, HttpServletResponse response) {
+	    Principal userPrincipal = request.getUserPrincipal();
+	    
+	    return userPrincipal;
+	}
+	
+	@RequestMapping("lolilol")
+	public String lala1(HttpServletRequest request, HttpServletResponse response) {
+
+	    
+	    return "lalalal";
+	}
 	
     @RequestMapping(value = "login", produces = "application/json")
     public Principal util(Principal user) {
