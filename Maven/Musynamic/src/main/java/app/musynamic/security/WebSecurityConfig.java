@@ -27,14 +27,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   @Autowired
   AuthenticationService authenticationService;
  
+//  @Override
+//  protected void configure(HttpSecurity http) throws Exception {
+//      http
+//       .sessionManagement()
+//       .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//       .and().httpBasic()
+//       .and().csrf().disable()
+//       .addFilterBefore(new WebSecurityCorsFilter(), ChannelProcessingFilter.class);
+//            }
   @Override
   protected void configure(HttpSecurity http) throws Exception {
 	  http
        .sessionManagement()
        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
        .and().authorizeRequests()
-       .antMatchers("/musynamic/login", "/musynamic/hello" ).permitAll()
-       .antMatchers("/musynamic/lolilol").hasRole("READ")
+       .antMatchers("/musynamic/login", "/musynamic/hello","/musynamic/lolilol" ).permitAll()
+       .antMatchers("/musynamic/lolilol").access("hasRole('ROLE_READ')")
        .anyRequest().authenticated()
        .and().httpBasic()
        .and().csrf().disable()
