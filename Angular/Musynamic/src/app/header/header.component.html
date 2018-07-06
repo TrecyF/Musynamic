@@ -1,26 +1,30 @@
 <!--Navbar-->
 <mdb-navbar class="fond" SideClass="navbar navbar-expand-lg navbar-dark ">
     <logo>
-  <a class="navbar-brand" href="/accueil"><img src="{{head.logo}}"></a></logo>
+  <a class="navbar-brand" routerLink="/accueil"><img src="{{head.logo}}"></a></logo>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 15px;">
       <span class="navbar-toggler-icon"></span>
     </button>
     <links>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link waves-light" mdbWavesEffect href="/accueil">Accueil
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="/accueil">Accueil
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-light" mdbWavesEffect RouterLink="/connexion"><i class="fa fa-sign-in"></i> {{head.connexion}}</a>
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="/boutique"> {{head.boutique}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link waves-light" mdbWavesEffect RouterLink="/connexion"><i class="fa fa-user"></i> {{head.inscription}}</a>
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="/connexion"><i class="fa fa-sign-in"></i> {{head.connexion}}</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link waves-light" mdbWavesEffect RouterLink="administrateur"> {{head.administrateur}}</a>
+            <a class="nav-link waves-light" mdbWavesEffect routerLink="/connexion"><i class="fa fa-user"></i> {{head.inscription}}</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect routerLink="/administrateur"> {{head.administrateur}}</a>
             </li>
+            
           
         </ul>
         <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -29,11 +33,7 @@
               <i class="fa fa-shopping-cart"></i>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link waves-light" mdbWavesEffect>
-              <i class="fa fa-reorder"></i>
-            </a>
-          </li>
+          
           <li class="nav-item dropdown btn-group" dropdown>
             <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect><i class="fa fa-user"></i>
             </a>
@@ -47,14 +47,5 @@
 </mdb-navbar>
   <!--/.Navbar -->
 
-  <section id="recherche">
-   <div class="container">
-     <h1>Vous recherchez un produit ?</h1>
-     <form class="form-inline col-sm-12">
-      <input class="form-control col-md-9 col-sm-12" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn  my-2 col-sm-12" type="submit">Search</button>
-    </form>
-   </div>
-  </section>
+  
 
-  <router-outlet></router-outlet>

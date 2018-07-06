@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Login } from './login';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {RequestOptions, XHRBackend} from '@angular/http';
 const httpOptions = {
     headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -11,19 +12,45 @@ const httpOptions = {
 @Injectable()
 export class LoginService {
     
-    login = new Login('', '');
-    urlService: string;
 
+    authenticated = false;
+    urlService = 'http://localhost:8086/musynamic/login';
     constructor(private http: HttpClient) {
-        this.urlService = 'http://localhost:4200/musynamic/login/';
+
     }
 
-    getLogin() : Observable<Login> {
-        return this.http.get<Login>(this.urlService + '/logins');
+
+    authenticate(credentials: Login, callback) {
+        console.log("1 "+sessionStorage);
+        const headers = new HttpHeaders(credentials ? {
+            authorization : 'Basic ' + btoa(credentials.email + ':' + credentials.password)
+        } : {'Content-Type': 'application/json'});
+        console.log("2 "+sessionStorage);
+      
+        this.http.get(this.urlService, {headers: headers}).subscribe(response => {
+            console.log("3"+ response);
+            if (response['name']) {
+                console.log("4 ");
+                sessionStorage.setItem('auth', btoa(credentials.email + ':' + credentials.password));
+                this.authenticated = true;
+            } else {
+                this.authenticated = false;
+            }    
+
+            return callback && callback();
+        });
     }
 
-    toLoginUser(formLogin: Login) {
-        console.log("Email : " + formLogin.email + ", Password : " + formLogin.password);
-        this.http.post<Login>(this.urlService, formLogin, httpOptions).subscribe();
-    }
+    logout() {
+        sessionStorage.removeItem('auth');
+        this.authenticated = false;       
+  	
+  }
+  isAuthenticated(): boolean {
+    return this.authenticated;
+  }
+
+  
+  
+
 }
