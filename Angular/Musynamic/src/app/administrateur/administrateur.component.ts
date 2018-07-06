@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Header } from '../header';
+import { Administrateur } from '../administrateur';
 
 @Component({
   selector: 'app-administrateur',
@@ -8,7 +8,7 @@ import { Header } from '../header';
 })
 export class AdministrateurComponent implements OnInit {
 
-  admin : Header = new Header("administrateur","administrateur");
+  admin : Administrateur = new Administrateur("administrateur");
 
   constructor() { }
 
