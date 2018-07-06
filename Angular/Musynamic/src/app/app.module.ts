@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import 'materialize-css';
 import { MaterializeModule } from 'angular2-materialize';
 
-
 import {  HTTP_INTERCEPTORS, HttpClientXsrfModule, } from '@angular/common/http'; 
 import { MDBBootstrapModule, InputsModule,NavbarModule, WavesModule } from 'angular-bootstrap-md';
 import { HttpClientModule } from '@angular/common/http'; 
@@ -31,6 +30,11 @@ import { EditProduitComponent } from './edit-produit/edit-produit.component';
 import { FicheProduitComponent } from './fiche-produit/fiche-produit.component';
 import { AuthInterceptor } from './auth-interceptor';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { Ng2CompleterModule } from "ng2-completer";
+
+
+import { MatCardModule, MatButtonModule, MatInputModule, MatToolbarModule, MatListModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -45,9 +49,9 @@ import { InscriptionComponent } from './inscription/inscription.component';
     ProduitComponent,
     AddProduitComponent,
     EditProduitComponent,
-    
-    
-  
+    IndexComponent,  
+    FicheProduitComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +61,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
     MDBBootstrapModule.forRoot(),
     NavbarModule,
     WavesModule,
+    InputsModule,
     AppRoutingModule,
     Ng2SmartTableModule,
     Ng2CompleterModule,
@@ -65,8 +70,9 @@ import { InscriptionComponent } from './inscription/inscription.component';
     MatInputModule,
     MatListModule,
     MatToolbarModule,
-    
-    
+    HttpClientXsrfModule,
+    FilterPipe,
+        
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
