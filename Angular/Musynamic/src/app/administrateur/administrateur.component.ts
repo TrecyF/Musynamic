@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Header } from '../header';
+import { Administrateur } from '../administrateur';
 
 @Component({
   selector: 'app-administrateur',
