@@ -28,6 +28,7 @@ import { FilterPipe } from './filter.pipe';
 import { PresentationProduitService } from './presentation-produit.service';
 
 import { AuthInterceptor } from './auth-interceptor';
+import { FicheProduitComponent } from './fiche-produit/fiche-produit.component';
 
 
 
@@ -42,7 +43,8 @@ import { AuthInterceptor } from './auth-interceptor';
     AdministrateurComponent,
     InscriptionComponent,
     IndexComponent,
-    FilterPipe, 
+    FilterPipe,
+    FicheProduitComponent, 
 
   ],
   imports: [

@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
       this.loginService.authenticate(this.model,  () => {
-        this.router.navigateByUrl('/');});
+        this.router.navigateByUrl('/');
+      });
       return false;
   }
 

@@ -14,7 +14,8 @@ export class PresentationProduitComponent implements OnInit {
   constructor(private service: PresentationProduitService) { }
 
   ngOnInit() {
-    this.service.authenticate();
+    this.service.lolilol();
+    
   }
 
 }

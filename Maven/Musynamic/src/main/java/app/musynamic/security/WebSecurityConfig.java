@@ -33,7 +33,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
        .sessionManagement()
        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
        .and().authorizeRequests()
-       .antMatchers("/musynamic/login", "musynamic/hello").permitAll()
+       .antMatchers("/musynamic/login", "/musynamic/hello" ).permitAll()
+       .antMatchers("/musynamic/lolilol").hasRole("READ")
        .anyRequest().authenticated()
        .and().httpBasic()
        .and().csrf().disable()
@@ -57,13 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //  .loginPage("/login")
 //  .permitAll();
   
-  @Bean
-  public DaoAuthenticationProvider authProvider() {
-      DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-      authProvider.setUserDetailsService(userDetailsService());
-      authProvider.setPasswordEncoder(new NoEncodingEncoder());
-      return authProvider;
-  }
+
  
   @Bean
   public PasswordEncoder passwordEncoder() {

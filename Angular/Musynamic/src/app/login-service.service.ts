@@ -12,11 +12,11 @@ const httpOptions = {
 @Injectable()
 export class LoginService {
     
-    urlService: string;
-    authenticated = false;
 
+    authenticated = false;
+    urlService = 'http://localhost:8086/musynamic/login';
     constructor(private http: HttpClient) {
-        this.urlService = 'http://localhost:8086/musynamic/login';
+
     }
 
 
@@ -28,8 +28,9 @@ export class LoginService {
         console.log("2 "+sessionStorage);
       
         this.http.get(this.urlService, {headers: headers}).subscribe(response => {
+            console.log("3"+ response);
             if (response['name']) {
-                console.log("if "+sessionStorage);
+                console.log("4 ");
                 sessionStorage.setItem('auth', btoa(credentials.email + ':' + credentials.password));
                 this.authenticated = true;
             } else {

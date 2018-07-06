@@ -11,7 +11,12 @@ export class PresentationProduitService {
     this.urlService = 'http://localhost:8086/musynamic/lolilol';
    }
 
-   authenticate() {
-    this.http.get(this.urlService ).subscribe();
+   lolilol() {
+    console.log("0");
+    this.http.get(this.urlService ).subscribe(response => {
+      console.log("3"+ response);
+
+  });
+    console.log("1 ");
   }
 }
