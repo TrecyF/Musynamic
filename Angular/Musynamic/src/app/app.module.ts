@@ -53,6 +53,7 @@ import { MatCardModule, MatButtonModule, MatInputModule, MatToolbarModule, MatLi
     FicheProduitComponent,
     InscriptionComponent,
     FilterPipe,
+
   ],
   imports: [
     BrowserModule,

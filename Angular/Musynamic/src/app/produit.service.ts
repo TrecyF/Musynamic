@@ -19,7 +19,7 @@ export class ProduitService {
 
 
   public getProduits(): Observable<any> {
-    return this.http.get(this.produitUrl+ '/listeprod');
+    return this.http.get('//localhost:8086/musynamic/createproduct/listeprod');
   }
 
   get(idProduit: string) {
@@ -34,9 +34,15 @@ export class ProduitService {
     return this.http.post(this.produitUrl, produit);
   }*/
 
-  deleteProduit(href: string) {
-    return this.http.delete(href);
+  deleteProduit(produit: any) {
+    //return this.http.delete(href);
+    let res: Observable<Object>;
+    if (produit['href']) {
+      res = this.http.delete(produit.href, produit);
+    } 
+    return res;
   }
+
   save(produit: any): Observable<any> {
     let result: Observable<Object>;
     if (produit['href']) {

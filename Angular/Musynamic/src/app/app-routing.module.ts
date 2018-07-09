@@ -6,6 +6,10 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { IndexComponent } from './index/index.component';
 import { PresentationProduitComponent } from './presentation-produit/presentation-produit.component';
 import { FicheProduitComponent } from './fiche-produit/fiche-produit.component';
+import { AdministrateurComponent } from './administrateur/administrateur.component';
+import { ListeCommandeComponent } from './liste-commande/liste-commande.component';
+import { ProduitComponent } from './liste-produit/liste-produit.component';
+import { AddProduitComponent } from './add-produit/add-produit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
@@ -13,7 +17,11 @@ const routes: Routes = [
   { path: 'connexion', component: LoginComponent },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'boutique', component: PresentationProduitComponent },
-  { path: 'ficheProduit', component: FicheProduitComponent }
+  { path: 'ficheProduit', component: FicheProduitComponent },
+  { path: 'admin', component: AdministrateurComponent },
+  { path: 'listecmd', component: ListeCommandeComponent },
+  { path: 'listeprod', component: ProduitComponent },
+  { path: 'addprod', component: AddProduitComponent },
 ];
 
 @NgModule({
