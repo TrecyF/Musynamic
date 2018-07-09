@@ -21,5 +21,13 @@ constructor() {
     this.head
   }
   
+  logout() {
+    sessionStorage.removeItem('auth');
+    console.log("logout");
+  }
 
+  authe() {
+    return sessionStorage.getItem('auth');
+
+  }
 }
