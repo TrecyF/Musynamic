@@ -1,37 +1,4 @@
-header .view {
-    background: url("src/img/venyl.jpg")no-repeat center center;
-    background-size: cover;
-    height: 100vh;
-}
 
-.navbar {
-    background-color: transparent;
-}
-
-.top-nav-collapse {
-    background-color: #4285F4;
-}
-.aqua-gradient{
-    background: -webkit-linear-gradient(50deg,#e1bee7,#bbdefb)!important;
-    background: -o-linear-gradient(50deg,#e1bee7,#bbdefb)!important;
-    background: linear-gradient(40deg,#e1bee7,#bbdefb)!important;
-    color: black;
-}
-::-webkit-input-placeholder {
-    color: white;
- }
- 
- :-moz-placeholder { /* Firefox 18- */
-    color: white;  
- }
- 
- ::-moz-placeholder {  /* Firefox 19+ */
-    color: white;  
- }
- 
- :-ms-input-placeholder {  
-    color: white; 
- }
 
  .collection-card .stripe a p{
     padding: 0;
@@ -54,9 +21,4 @@ header .view {
 
 .collection-card .stripe.light {
     background-color: rgba(255,255,255,.7);
-}
-@media only screen and (max-width: 768px) {
-    .navbar {
-        background-color: #4285F4;
-    }
 }

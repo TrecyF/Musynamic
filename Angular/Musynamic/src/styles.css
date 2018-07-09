@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+nav{
+    background: -webkit-linear-gradient(50deg,#e1bee7,#bbdefb)!important;
+    background: -o-linear-gradient(50deg,#e1bee7,#bbdefb)!important;
+    background: linear-gradient(40deg,#e1bee7,#bbdefb)!important;
+}
+
+.navbar.navbar-dark .breadcrumb .nav-item .nav-link, .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+    color: #000;
+    transition: 0.35s;
+}
+
+.navbar-expand-lg .navbar-nav{
+    align-items: center;
+}
+
+ mdb-navbar > nav > div > div.navbar-collapse.collapse > links > ul.navbar-nav.mr-auto.mt-2.mt-lg-0 > li:nth-child(3),
+ mdb-navbar > nav > div > div.navbar-collapse.collapse > links > ul.navbar-nav.mr-auto.mt-2.mt-lg-0 > li:nth-child(4){
+    margin-top: 15px;
+}
+
+

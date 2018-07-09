@@ -1,0 +1,13 @@
+.mdb-color,.btn-danger{
+    background: -webkit-linear-gradient(50deg,#e1bee7,#bbdefb)!important;
+    background: -o-linear-gradient(50deg,#e1bee7,#bbdefb)!important;
+    background: linear-gradient(40deg,#e1bee7,#bbdefb)!important;
+}
+
+a:not([href]):not([tabindex]){
+    margin-left: 10px;
+}
+
+.btn-floating{
+    background-color: #bbdefb;
+}
