@@ -54,6 +54,11 @@
   </div>
 
   <div class="form-group">
+    <label for="stock">Priw:</label>
+    <input [(ngModel)]="produit.prix" name="prix" class="form-control" id="prix">
+  </div>
+
+  <div class="form-group">
     <label for="stock">STOCK:</label>
     <input [(ngModel)]="produit.stock" name="stock" class="form-control" id="stock">
   </div>
@@ -63,6 +68,6 @@
     <input [(ngModel)]="produit.photo" name="photo" class="form-control" id="photo">
   </div>
 
-  <button class="btn btn-success" (click)="createProduct()">Create</button>
+  <button class="btn btn-success">Create</button>
 </form>
 </div>

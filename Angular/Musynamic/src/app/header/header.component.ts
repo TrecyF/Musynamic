@@ -21,8 +21,9 @@ constructor(private router: Router) {
     this.head
   }
   
-    sessionStorage.removeItem('auth');
+   
   logout() {
+    sessionStorage.removeItem('auth');
     console.log("logout");
   }
   IsAccueil() {
