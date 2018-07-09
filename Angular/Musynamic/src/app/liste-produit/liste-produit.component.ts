@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 
-
 @Component({
   selector: 'app-liste-produit',
   templateUrl: './liste-produit.component.html',
