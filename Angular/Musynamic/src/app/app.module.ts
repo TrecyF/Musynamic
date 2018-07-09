@@ -51,7 +51,8 @@ import { MatCardModule, MatButtonModule, MatInputModule, MatToolbarModule, MatLi
     EditProduitComponent,
     IndexComponent,  
     FicheProduitComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +72,6 @@ import { MatCardModule, MatButtonModule, MatInputModule, MatToolbarModule, MatLi
     MatListModule,
     MatToolbarModule,
     HttpClientXsrfModule,
-    FilterPipe,
         
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
