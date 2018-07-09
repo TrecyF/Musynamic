@@ -21,6 +21,7 @@ import { LoginService } from './login-service.service';
 import { CarouselImg } from './carousel/carousel-img';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { FilterPipe } from './filter.pipe';
+import { ProductprintComponent } from './productprint/productprint.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { FilterPipe } from './filter.pipe';
     AdministrateurComponent,
     InscriptionComponent,
     IndexComponent,
-    FilterPipe, 
+    FilterPipe,
+    ProductprintComponent, 
 
   ],
   imports: [

@@ -23,11 +23,6 @@ export class LoginService {
         return this.http.get<Login>(this.urlService);
     }
 
-    toLoginUser(formLogin: Login) {
-        console.log("Email : " + formLogin.email + ", Password : " + formLogin.password);
-        this.http.post<Login>(this.urlService, formLogin, httpOptions).subscribe();
-    }
-
     authenticate(credentials: Login, callback) {
         const headers = new HttpHeaders(credentials ? {
             authorization : 'Basic ' + btoa(credentials.email + ':' + credentials.password)

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Login } from '../login';
 import { LoginService } from '../login-service.service';
-import { RouterModule, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
     this.loginService.getLogin()
     .subscribe(connexion => this.model = connexion);
   }
+
   onSubmit() {
       this.loginService.authenticate(this.model,  () => {
         this.router.navigateByUrl('/');});
