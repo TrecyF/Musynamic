@@ -41,11 +41,11 @@ export class LoginService {
         });
     }
 
-    logout() {
-        sessionStorage.removeItem('auth');
-        this.authenticated = false;       
+//     logout() {
+//         sessionStorage.removeItem('auth');
+//         this.authenticated = false;       
   	
-  }
+//   }
   isAuthenticated(): boolean {
     return this.authenticated;
   }
