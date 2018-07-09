@@ -19,10 +19,10 @@ export class AddProduitComponent {
     this.router.navigate(['/listeprod']);
   }
 
-  createProduct(): void {
-    this.produitService.createProduit(this.produit)
-        .subscribe(produit => this.produits.push(produit));
-  }
+  // createProduct(): void {
+  //   this.produitService.createProduit(this.produit)
+  //       .subscribe(produit => this.produits.push(produit));
+  // }
   
   save(form: NgForm) {
     this.produitService.save(form)
