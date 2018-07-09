@@ -42,8 +42,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
        .sessionManagement()
        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
        .and().authorizeRequests()
-       .antMatchers("/musynamic/login", "/musynamic/hello","/musynamic/lolilol" ).permitAll()
-       .antMatchers("/musynamic/lolilol").access("hasRole('ROLE_READ')")
+       .antMatchers("/**","/musynamic/login", "/musynamic/hello","/musynamic/lolilol" ).permitAll()
+       //.antMatchers("/musynamic/lolilol").access("hasRole('ROLE_READ')")
        .anyRequest().authenticated()
        .and().httpBasic()
        .and().csrf().disable()
@@ -78,4 +78,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
        auth.userDetailsService(authenticationService).passwordEncoder(passwordEncoder());
   }
+
 }
