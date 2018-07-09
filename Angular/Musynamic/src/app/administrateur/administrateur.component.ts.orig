@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+import { Administrateur } from '../administrateur';
+
+@Component({
+  selector: 'app-administrateur',
+  templateUrl: './administrateur.component.html',
+  styleUrls: ['./administrateur.component.scss']
+})
+export class AdministrateurComponent implements OnInit {
+
+<<<<<<< HEAD
+  admin : Administrateur = new Administrateur("administrateur");
+=======
+  //admin : Header = new Header("administrateur","administrateur");
+>>>>>>> bbd98dff5b881e81ca9e63b60401f76f949ad42e
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

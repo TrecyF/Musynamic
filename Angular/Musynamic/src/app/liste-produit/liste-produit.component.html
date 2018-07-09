@@ -1,0 +1,31 @@
+<div class="col-md-6">
+  <h2> Liste des produits</h2>
+  
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>id produit</th>
+      <th>type</th>
+      <th>nom</th>
+      <th>date de parution</th>
+      <th>interprete</th>
+      <th>description</th>
+      <th>photo</th>
+      <th>stock</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let produit of produits">
+      <td>{{produit.idProduit}}</td>
+      <td>{{produit.type}}</td>
+      <td>{{produit.nom}}</td>
+      <td>{{produit.date_de_parution}}</td>
+      <td>{{produit.interprete}}</td>
+      <td>{{produit.description}}</td>
+      <td>{{produit.photo}}</td>
+      <td>{{produit.stock}}</td>
+      <td><button class="btn btn-danger" (click)="deleteProduit(produit)"> Delete Produit</button></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>

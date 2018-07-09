@@ -23,8 +23,12 @@ export class InscriptionComponent implements OnInit {
     console.log(this.model.userEmail);
   }
 
+<<<<<<< HEAD
   onSubmit() {
     this.inscriptionServiceService.toRegisterUser(this.model)
     .subscribe(model => this.models.push(model));
   }
+=======
+
+>>>>>>> 241959af90552a16ffd5400694429668bbd33aa8
 }

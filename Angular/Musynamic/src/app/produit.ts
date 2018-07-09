@@ -1,6 +1,10 @@
 export class Produit {
     idProduit : number;
+<<<<<<< HEAD
     date_de_parution : string;
+=======
+    date_de_parution : Date;
+>>>>>>> 241959af90552a16ffd5400694429668bbd33aa8
     description : string;
     interprete : string;
     nom : string;
@@ -8,6 +12,7 @@ export class Produit {
     prix : string;
     stock : number;
     type : string;
+<<<<<<< HEAD
 
     constructor(
         idProduit: number,
@@ -32,3 +37,6 @@ export class Produit {
         this.type = type;
     }
 }
+=======
+}
+>>>>>>> 241959af90552a16ffd5400694429668bbd33aa8

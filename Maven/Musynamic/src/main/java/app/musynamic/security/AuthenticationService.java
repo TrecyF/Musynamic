@@ -1,4 +1,3 @@
-
 package app.musynamic.security;
 
 import java.util.ArrayList;
@@ -48,7 +47,7 @@ public class AuthenticationService implements UserDetailsService {
 		@Override
 	    public UserDetails loadUserByUsername(String email)  throws UsernameNotFoundException {
 	        Utilisateur user = utilisateurService.utilisateurFindByEmail(email);
-	        System.out.println("User : " + user);
+	        System.out.println("User : " + user.getMot_de_passe() + " "+ " " +  user.getNom() + " " + user.getEmail());
 	        if(user==null){
 	        	System.out.println("User not found");
 	            throw new UsernameNotFoundException("Username not found");
@@ -65,8 +64,8 @@ public class AuthenticationService implements UserDetailsService {
 	        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 	         
 
-	            System.out.println("UserProfile : " + user);
-	            authorities.add(new SimpleGrantedAuthority(user.getDroit()));
+	            System.out.println("UserProfile : " + user.getMot_de_passe() + user.getNom() + user.getEmail());
+	            authorities.add(new SimpleGrantedAuthority("ROLE_" +user.getDroit()));
 	        
 	        System.out.println("authorities : " + user.getDroit());
 	        
