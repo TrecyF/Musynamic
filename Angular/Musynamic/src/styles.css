@@ -20,3 +20,25 @@ nav{
 }
 
 
+.title h2{
+    margin: 40px;
+}
+
+.add-produit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.add-produit form{
+    width: 50%;
+}
+
+.btn-success{
+    background: linear-gradient(40deg,#e1bee7,#bbdefb)!important;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
+    border:2px solid #bbdefb;
+}

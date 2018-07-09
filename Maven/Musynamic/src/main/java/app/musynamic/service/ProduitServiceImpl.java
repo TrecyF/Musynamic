@@ -68,29 +68,8 @@ public class ProduitServiceImpl implements ProduitService {
     }
 	
 
-    @Override
-    public Produit delete(int idProduit) {
-    	Produit produit = findById(idProduit);
-        if(produit != null){
-        	produitRepository.delete(produit);
-        }
-        return produit;
-    }
+   
 
-    @Override
-    public List<Produit> findAll() {
-        return produitRepository.findAll();
-    }
-
-    @Override
-    public Produit findById(int idProduit) {
-        //return produitRepository.findOne(idProduit);
-    	return new Produit();
-    }
-
-    @Override
-    public Produit update(Produit produit) {
-        return null;
-    }
+   
 	
 }
