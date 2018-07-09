@@ -41,8 +41,8 @@ public class MusynamicApplication implements CommandLineRunner {
     			"jaimeLaFondue123", 
     			"");
     
-    	/*System.out.println("-*------------------------******-------------- **---- **- --- -- jhghkgcjhcjhcjhgchj");
-    	produitService.addProduit(
+    	System.out.println("-*------------------------******-------------- **---- **- --- -- jhghkgcjhcjhcjhgchj");
+    	produitService.create(
 			"Album Carlos", 
 			Type.Cd, 
 			"album de Carlos tout nu est tout bronzé",
@@ -50,7 +50,18 @@ public class MusynamicApplication implements CommandLineRunner {
 			"Carlos", 
 			4000, 
 			10, 
-			"url_photo");*/
+			"url_photo");
+    	
+    	produitService.create(
+    			"Album lala", 
+    			Type.Cd, 
+    			"album de Carlos tout nu est tout bronzé",
+    			LocalDate.of(1995, 06, 26), 
+    			"Carlos", 
+    			4000, 
+    			10, 
+    			"url_photo");
+
 
 	}
 }
