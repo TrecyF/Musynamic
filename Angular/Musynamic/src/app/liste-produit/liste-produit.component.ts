@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ProduitService } from '../produit.service';
-import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class ProduitComponent implements OnInit, OnDestroy {
   produits: Array<any>;
   sub: Subscription;
 
-  constructor(private produitService: ProduitService) {
+  constructor(private router: Router, private produitService: ProduitService) {
   }
 
   ngOnInit() {
@@ -27,10 +27,14 @@ export class ProduitComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
+  gotoList() {
+    this.router.navigate(['createproduct/listeprod']);
+  }
+
   remove(href) {
     this.produitService.deleteProduit(href)
     .subscribe(data => {
-//      this.gotoList();
+      this.gotoList();
     }, error => console.error(error));
   }
 
