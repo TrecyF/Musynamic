@@ -4,11 +4,20 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import app.musynamic.model.Produit;
 
 @Repository
+@CrossOrigin(origins = "http://localhost:4200")
 public interface ProduitRepository extends CrudRepository<Produit, String> {
-	public List<Produit> findByNom(String nom); 
 
+	void delete(Produit produit);
+
+	List<Produit> findAll();
+
+	//Produit findOne(int idProduit);
+
+	Produit save(Produit produit);
 }
+	

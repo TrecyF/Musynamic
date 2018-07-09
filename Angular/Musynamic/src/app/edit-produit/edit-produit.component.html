@@ -1,0 +1,60 @@
+<p>
+  edit-produit !
+</p>
+<mat-card>
+  <form #carForm="ngForm" (ngSubmit)="save(produitForm.value)">
+    <mat-card-header>
+      <mat-card-title><h2>{{produit.nom ? 'Edit' : 'Save'}} Produit</h2></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <input type="hidden" name="href" [(ngModel)]="produit.href">
+      <mat-form-field>
+        <input matInput placeholder="nom du produit " [(ngModel)]="produit.nom"
+               required name="name" #name>
+      </mat-form-field>
+      <input type="hidden" name="href" [(ngModel)]="produit.href">
+      <mat-form-field>
+        <input matInput placeholder="produit date_de_parution" [(ngModel)]="produit.date_de_parution"
+               required name="date_de_parution" #name>
+      </mat-form-field>
+      <input type="hidden" name="href" [(ngModel)]="produit.href">
+      <mat-form-field>
+        <input matInput placeholder="produit description" [(ngModel)]="produit.description"
+               required name="description" #name>
+      </mat-form-field>
+      <input type="hidden" name="href" [(ngModel)]="produit.href">
+      <mat-form-field>
+        <input matInput placeholder="produit interprete" [(ngModel)]="produit.interprete"
+               required name="interprete" #name>
+      </mat-form-field>
+      <input type="hidden" name="href" [(ngModel)]="produit.href">
+      <mat-form-field>
+        <input matInput placeholder="produit photo" [(ngModel)]="produit.photo"
+               required name="photo" #name>
+      </mat-form-field>
+      <input type="hidden" name="href" [(ngModel)]="produit.href">
+      <mat-form-field>
+        <input matInput placeholder="produit prix" [(ngModel)]="produit.prix"
+               required name="prix" #name>
+      </mat-form-field>
+      <input type="hidden" name="href" [(ngModel)]="produit.href">
+      <mat-form-field>
+        <input matInput placeholder="produit stock" [(ngModel)]="produit.stock"
+               required name="stock" #name>
+      </mat-form-field>
+      <input type="hidden" name="href" [(ngModel)]="produit.href">
+      <mat-form-field>
+        <input matInput placeholder="produit type" [(ngModel)]="produit.type"
+               required name="type" #name>
+      </mat-form-field>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit"
+              [disabled]="!carForm.form.valid">Save</button>
+      <a mat-button routerLink="/listeprod">Cancel</a>
+    </mat-card-actions>
+    <mat-card-footer>
+    </mat-card-footer>
+  </form>
+</mat-card>

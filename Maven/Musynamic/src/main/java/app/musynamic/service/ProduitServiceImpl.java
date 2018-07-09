@@ -1,7 +1,6 @@
  package app.musynamic.service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,33 +17,54 @@ public class ProduitServiceImpl implements ProduitService {
     @Autowired
     private ProduitRepository produitRepository;
 
-	public List<String> getAllProductsByName(String nom) {
-		
-        List<String> result = new ArrayList<String>();
-        List<Produit> products = produitRepository.findByNom(nom);
-        for (Produit product : products) {
-            result.add(product.getNom());
-        }
-        return result;
-	}
-
-
+    
+//    @Override
+//    public Produit create(Produit produit) {
+//        return produitRepository.save(produit);
+//    }
+    
+    
 	@Override
-	public void addProduit(String nom, Type type, String description,
-			LocalDate date_de_parution, String interprete, int stock, int prix, String photo) {
+	public void create(String nom, Type type, String description, LocalDate date_de_parution, String interprete, int stock, int prix, String photo) {
 
-        Produit newProduct = new Produit();
-        
-        newProduct.setNom(nom);
-        newProduct.setType(type);
-        newProduct.setDescription(description);
-        newProduct.setDate_de_parution(date_de_parution);
-        newProduct.setInterprete(interprete);
-        newProduct.setStock(stock);
-        newProduct.setPrix(prix);
-        newProduct.setPhoto(photo);
-        produitRepository.save(newProduct);
-		
+		Produit newProd = new Produit();
+
+		newProd.setNom(nom);
+		newProd.setType(type);
+		newProd.setDescription(description);
+		newProd.setDate_de_parution(date_de_parution);
+		newProd.setInterprete(interprete);
+		newProd.setStock(stock);
+		newProd.setPrix(prix);
+		newProd.setPhoto(photo);
+		produitRepository.save(newProd);
+
 	}
+	
+
+    @Override
+    public Produit delete(int idProduit) {
+    	Produit produit = findById(idProduit);
+        if(produit != null){
+        	produitRepository.delete(produit);
+        }
+        return produit;
+    }
+
+    @Override
+    public List<Produit> findAll() {
+        return produitRepository.findAll();
+    }
+
+    @Override
+    public Produit findById(int idProduit) {
+        //return produitRepository.findOne(idProduit);
+    	return new Produit();
+    }
+
+    @Override
+    public Produit update(Produit produit) {
+        return null;
+    }
 	
 }
