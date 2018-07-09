@@ -1,21 +1,20 @@
 package app.musynamic.service;
 
-import java.time.LocalDate;
 import java.util.List;
 
-import app.musynamic.model.Type;
+import app.musynamic.model.Produit;
 
 public interface ProduitService {
 
-	public List<String> getAllProductsByName(String nom);
-	public void addProduit(
-			String nom,
-			Type type,
-			String description,
-			LocalDate date_de_parution,
-			String interprete,
-			int stock,
-			int prix,
-			String photo);
+	Produit create(Produit produit);
 
+	Produit delete(int idProduit);
+
+	    List<Produit> findAll();
+
+	    Produit findById(int idProduit);
+
+	    Produit update(Produit produit);
+	
+	
 }
