@@ -25,6 +25,9 @@ nav{
     margin-top: 15px;
 }
 
+.recherche h1, .recherche p{
+    color: #fff;
+}
 
 .title h2{
     margin: 40px;

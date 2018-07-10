@@ -66,6 +66,16 @@ public class ProduitServiceImpl implements ProduitService {
     public Produit update(Produit produit) {
         return null;
     }
+
+
+	@Override
+	public List<Produit> SeachNom(String nom) {
+		
+		List<Produit>  a = produitRepository.findByNom(nom);
+		
+		return produitRepository.findByNom(nom);
+		
+	}
 	
 
    

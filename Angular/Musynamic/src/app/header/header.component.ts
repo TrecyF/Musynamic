@@ -21,6 +21,7 @@ constructor(private router: Router) {
     this.head
   }
   
+  
    
   logout() {
     sessionStorage.removeItem('auth');
@@ -33,5 +34,12 @@ constructor(private router: Router) {
   authe() {
     return sessionStorage.getItem('auth');
 
+  }
+
+
+
+
+  search(){
+    return this.router.url==="/products/search"
   }
 }
