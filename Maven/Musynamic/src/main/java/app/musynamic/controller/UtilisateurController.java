@@ -19,27 +19,21 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.access.prepost.PreAuthorize;
-<<<<<<< HEAD
 import org.springframework.ui.ModelMap;
-=======
->>>>>>> 241959af90552a16ffd5400694429668bbd33aa8
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-<<<<<<< HEAD
 import app.musynamic.model.Utilisateur;
 import app.musynamic.service.UtilisateurService;
 
-@CrossOrigin(origins = "http://localhost:4200")
-=======
 @CrossOrigin(origins = "http://localhost:4200/", maxAge = 3600)
->>>>>>> 241959af90552a16ffd5400694429668bbd33aa8
 @RestController
 @RequestMapping("/musynamic/")
 public class UtilisateurController {

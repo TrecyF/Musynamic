@@ -9,7 +9,7 @@ import { Produit } from '../produit';
 export class ProductprintComponent implements OnInit {
 
   product = new Produit( 1, 
-                    "2007-06-17",
+                    new Date(2007,6,17),
                     "cijcij",
                     "Jean Luc",
                     "Le port d'amsterdam Vol. 2",

@@ -21,14 +21,6 @@ export class LoginComponent implements OnInit {
     //this.loginService.logout();
   }
 
-<<<<<<< HEAD
-  getConnexion()  {
-    this.loginService.getLogin()
-    .subscribe(connexion => this.model = connexion);
-  }
-
-=======
->>>>>>> 241959af90552a16ffd5400694429668bbd33aa8
   onSubmit() {
       this.loginService.authenticate(this.model,  () => {
         this.router.navigateByUrl('/');

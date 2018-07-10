@@ -30,14 +30,10 @@ import { EditProduitComponent } from './edit-produit/edit-produit.component';
 import { FicheProduitComponent } from './fiche-produit/fiche-produit.component';
 import { AuthInterceptor } from './auth-interceptor';
 import { InscriptionComponent } from './inscription/inscription.component';
-<<<<<<< HEAD
-import { FilterPipe } from './filter.pipe';
 import { ProductprintComponent } from './productprint/productprint.component';
-=======
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { Ng2CompleterModule } from "ng2-completer";
+import { Ng2CompleterModule } from 'ng2-completer';
 
->>>>>>> 241959af90552a16ffd5400694429668bbd33aa8
 
 import { MatCardModule, MatButtonModule, MatInputModule, MatToolbarModule, MatListModule} from '@angular/material';
 
@@ -57,13 +53,9 @@ import { MatCardModule, MatButtonModule, MatInputModule, MatToolbarModule, MatLi
     IndexComponent,  
     FicheProduitComponent,
     InscriptionComponent,
-<<<<<<< HEAD
     IndexComponent,
     FilterPipe,
     ProductprintComponent, 
-=======
-    FilterPipe,
->>>>>>> 241959af90552a16ffd5400694429668bbd33aa8
 
   ],
   imports: [
