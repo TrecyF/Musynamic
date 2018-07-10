@@ -19,7 +19,6 @@ export class LoginService {
 
     }
 
-
     authenticate(credentials: Login, callback) {
         console.log("1 "+sessionStorage);
         const headers = new HttpHeaders(credentials ? {

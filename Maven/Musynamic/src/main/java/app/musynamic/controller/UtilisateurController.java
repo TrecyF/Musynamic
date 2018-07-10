@@ -3,7 +3,12 @@ package app.musynamic.controller;
 import java.security.Principal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,13 +19,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import app.musynamic.model.Utilisateur;
+import app.musynamic.service.UtilisateurService;
 
 @CrossOrigin(origins = "http://localhost:4200/", maxAge = 3600)
 @RestController
@@ -28,12 +39,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class UtilisateurController {
 	
 	private JdbcTemplate jdbcTemplate;
-
+	
 	@Autowired
 	public void setDataSource(DataSource ds) {
 		this.jdbcTemplate = new JdbcTemplate(ds);
 
 	}
+	
+	@Autowired
+	UtilisateurService utilisateurService;
 
 
 	@RequestMapping(method = RequestMethod.GET, produces = "application/json")
@@ -89,7 +103,40 @@ public class UtilisateurController {
        System.out.println("dans el controler " + user.getName());
     	return user;
     }
-	    
+    
+    /*@RequestMapping("register") 
+    public Utilisateur toRegister(HttpServletRequest request, HttpServletResponse response) {
+    	utilisateurService.addUtilisateur(@RequestParam("name") String name)
+    	return ; 
+    }*/
+	   
+    @RequestMapping(value = "register", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseEntity<List<Utilisateur>> toRegister(
+    		@RequestBody Map<String,String> json) {
+    	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-d");
+    	System.out.println(json.get("userSurname") + " : " + json.get("userFirstname") + " : " + json.get("userAddress") + " : " + json.get("userPhone") + " : " + json.get("userEmail") + " : " + json.get("userPassword") + " : " + json.get("userRights"));
+    	List<Utilisateur> list = new ArrayList<>();
+    	list.add(new Utilisateur(
+    							json.get("userSurname"),
+    							json.get("userFirstname"),
+    							json.get("userAddress"),
+    							json.get("userPhone"),
+    							json.get("userEmail"),
+    							LocalDate.parse(json.get("userDateBirth"), formatter), // A CONVERTIR
+    							json.get("userPassword"),
+    							json.get("userRights")));
+    	utilisateurService.addUtilisateur(
+    							json.get("userSurname"),
+    							json.get("userFirstname"),
+    							json.get("userAddress"),
+    							json.get("userPhone"),
+    							json.get("userEmail"),
+    							LocalDate.parse(json.get("userDateBirth"), formatter),
+    							json.get("userPassword"),
+    							json.get("userRights")); 
+    	return new ResponseEntity<>(list, HttpStatus.OK);
+    }
 	
 //	@GetMapping("utilisateur/{id}")
 //	public User findOwner(@PathVariable("id") int theId) throws ParseException {
