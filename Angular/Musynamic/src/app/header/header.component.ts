@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Header } from '../header';
-
+import { RouterModule, Routes, Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   head : Header = new Header("Connexion","Inscription","Boutique");
 
  
-constructor() { 
+constructor(private router: Router) { 
    
   
   
@@ -21,9 +21,13 @@ constructor() {
     this.head
   }
   
+   
   logout() {
     sessionStorage.removeItem('auth');
     console.log("logout");
+  }
+  IsAccueil() {
+    return this.router.url === "/accueil";
   }
 
   authe() {

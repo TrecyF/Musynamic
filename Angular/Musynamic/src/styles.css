@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+p,h1,h2,h3,h4,h5,h6,a,footer.page-footer a{
+    color: black
+}
+
+
+
+nav{
+    background: -webkit-linear-gradient(50deg,#e1bee7,#bbdefb)!important;
+    background: -o-linear-gradient(50deg,#e1bee7,#bbdefb)!important;
+    background: linear-gradient(40deg,#e1bee7,#bbdefb)!important;
+}
+
+.navbar.navbar-dark .breadcrumb .nav-item .nav-link, .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+    color: #000;
+    transition: 0.35s;
+}
+
+.navbar-expand-lg .navbar-nav{
+    align-items: center;
+}
+
+ mdb-navbar > nav > div > div.navbar-collapse.collapse > links > ul.navbar-nav.mr-auto.mt-2.mt-lg-0 > li:nth-child(3),
+ mdb-navbar > nav > div > div.navbar-collapse.collapse > links > ul.navbar-nav.mr-auto.mt-2.mt-lg-0 > li:nth-child(4){
+    margin-top: 15px;
+}
+
+
+.title h2{
+    margin: 40px;
+    
+}
+
+.add-produit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.add-produit form{
+    width: 50%;
+}
+
+.btn-success,.btn{
+    background: linear-gradient(40deg,#e1bee7,#bbdefb)!important;
+    color: #000 !important;
+}
+
+.btn-danger{
+    color: #000 !important;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
+    border:2px solid #bbdefb;
+}
+
+
+ header > mdb-navbar > nav > div > div.navbar-collapse.collapse > links > ul.navbar-nav.mr-auto.mt-2.mt-lg-0 > li:nth-child(3) > button{
+    background: unset;
+}
+
+
+header > mdb-navbar > nav > div > div.navbar-collapse.collapse > links > ul.navbar-nav.mr-auto.mt-2.mt-lg-0 > li:nth-child(3) > button:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+body > app-root > app-inscription > div > div:nth-child(2) > form > div:nth-child(8) > div > button > i{
+    margin-top: -4px;
+}
+footer > div.container > div > div.col-md-3.offset-md-1 > a > img{
+    min-width: 91%;
+    max-width: 91%;
+
+}
+

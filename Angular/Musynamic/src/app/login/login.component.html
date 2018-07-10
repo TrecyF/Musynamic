@@ -1,59 +1,60 @@
 <div class="container">
-  <h2>Connectez-vous où venez nous rejoindre en vous inscrivant</h2>
-   <div class="row">
-     <div class="col-8">
-         <h1>Se connecter</h1>
-     </div>
-     <div class="col">
-         <h1>S'inscrire</h1>
-     </div> 
-</div>
-<div class="row">
-  <div class="col">
-    <form (ngSubmit)="onSubmit()">
-         <div class="row">
-           <div class="input-field col-12">
-             <i class="material-icons prefix">account_circle</i>
-             <input id="icon_prefix" type="email" class="validate" name="email" [(ngModel)]="model.email">
-             <label for="icon_prefix">Email</label>
-           </div>
-         </div>
-         <div class="row">
-           <div class="input-field col-12">
-             <i class="material-icons prefix">lock</i>
-             <input id="icon_prefix1" type="password" class="validate" name="password" [(ngModel)]="model.password">
-             <label for="icon_prefix">Password</label>
-           </div>
-         </div>
-         <div class="row">
-           <div class="col s12">
-             <button class="btn waves-effect waves-light" type="submit" name="action">Valider
-               <i class="material-icons right">send</i>
-             </button>
-           </div>
-         </div>
-       </form>
+    <h2>Connectez-vous où venez nous rejoindre en vous inscrivant</h2>
+     <div class="row">
+       <div class="col-8">
+           <h1>Se connecter</h1>
+       </div>
+       <div class="col">
+           <h1>S'inscrire</h1>
+       </div> 
   </div>
-  <div class="col">
-    <form class="col s6" (ngSubmit)="onSubmitInsc()">
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">account_circle</i>
-            <input id="icon_prefix2" type="email" class="validate" name="email" [(ngModel)]="modelEmailTemp">
-            <label for="icon_prefix">Email</label>
-          </div>
+  <div class="row">
+    <div class="col">
+      <form (ngSubmit)="onSubmit()">
+           <div class="row">
+             <div class="input-field col-12">
+               <i class="material-icons prefix">account_circle</i>
+               <input id="icon_prefix" type="email" class="validate" name="email" [(ngModel)]="model.email">
+               <label for="icon_prefix">Email</label>
+             </div>
+           </div>
+           <div class="row">
+             <div class="input-field col-12">
+               <i class="material-icons prefix">lock</i>
+               <input id="icon_prefix1" type="password" class="validate" name="password" [(ngModel)]="model.password">
+               <label for="icon_prefix">Mot de passe</label>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-12">
+               <button class="btn waves-effect waves-light" type="submit"   >Valider
+                 <i class="material-icons right">send</i>
+               </button>
+             </div>
+           </div>
+         </form>
+    </div>
+  <div class="col"></div>
+    <div class="col justify-content-md-center">
+      <form class="col-12" (ngSubmit)="onSubmitInsc()">
           <div class="row">
-            Si vous souhaitez utiliser nos services vous devez créer un compte utilisateur. C'est totalement gratuit et vos préférences
-            seront enregistrées.
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <button class="btn waves-effect waves-light" type="submit" name="action">Continuer l'inscription
-                <i class="material-icons right">send</i>
-              </button>
+            <div class="input-field col-12">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_prefix2" type="email" class="validate" name="email" [(ngModel)]="modelEmailTemp">
+              <label for="icon_prefix">Email</label>
             </div>
-          </div>
-      </div>
-        </form>
- </div>
-</div>
+            <div class="row">
+              Si vous souhaitez utiliser nos services vous devez créer un compte utilisateur. C'est totalement gratuit et vos préférences
+              seront enregistrées.
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Continuer l'inscription
+                  <i class="material-icons right">send</i>
+                </button>
+              </div>
+            </div>
+        </div>
+          </form>
+   </div>
+  </div>

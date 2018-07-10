@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProduitService } from '../produit.service';
 import { NgForm } from '@angular/forms';
-//import { Produit } from '../produit';
+import { Produit } from '../produit';
 
 @Component({
   templateUrl: './add-produit.component.html'
@@ -19,10 +19,10 @@ export class AddProduitComponent {
     this.router.navigate(['/listeprod']);
   }
 
-  createProduct(): void {
-    this.produitService.createProduit(this.produit)
-        .subscribe(produit => this.produits.push(produit));
-  }
+  // createProduct(): void {
+  //   this.produitService.createProduit(this.produit)
+  //       .subscribe(produit => this.produits.push(produit));
+  // }
   
   save(form: NgForm) {
     this.produitService.save(form)
