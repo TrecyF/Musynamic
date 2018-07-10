@@ -10,7 +10,7 @@ export class Header {
         this.boutique = boutique;
         this.connexion = connexion;
         this.inscription = inscription;
-        this.logo = require('../img/logo4.png');
+        this.logo = require('../img/logo-petit.png');
     }
 
 }

@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+p,h1,h2,h3,h4,h5,h6,a,footer.page-footer a{
+    color: black
+}
+
+
+
 nav{
     background: -webkit-linear-gradient(50deg,#e1bee7,#bbdefb)!important;
     background: -o-linear-gradient(50deg,#e1bee7,#bbdefb)!important;
@@ -38,6 +44,11 @@ nav{
 
 .btn-success,.btn{
     background: linear-gradient(40deg,#e1bee7,#bbdefb)!important;
+    color: #000 !important;
+}
+
+.btn-danger{
+    color: #000 !important;
 }
 
 [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after{
@@ -57,3 +68,9 @@ header > mdb-navbar > nav > div > div.navbar-collapse.collapse > links > ul.navb
 body > app-root > app-inscription > div > div:nth-child(2) > form > div:nth-child(8) > div > button > i{
     margin-top: -4px;
 }
+footer > div.container > div > div.col-md-3.offset-md-1 > a > img{
+    min-width: 91%;
+    max-width: 91%;
+
+}
+
