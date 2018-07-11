@@ -76,10 +76,16 @@ public class ProduitController {
         return produitService.update(produit);
     }
     
-    @GetMapping(value="products/search", produces = "application/json" )
-    public List<Produit> searchByNom(@RequestParam String nom){
+   // @GetMapping(value="products/search", produces = "application/json" )
+   // public List<Produit> searchByNom(@RequestParam String nom){
     	
-    	return produitService.SeachNom(nom);
-    }
+    //	return produitService.SeachNom(nom);
+    //}
+    
+    
+    @GetMapping(path ={"products/search"})     
+    public List<Produit> searchByNom(@PathVariable("nom") String nom) {        
+    	return produitService.SeachNom(nom);   
+    	}
     
 }
