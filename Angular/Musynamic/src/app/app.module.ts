@@ -36,6 +36,7 @@ import { Ng2CompleterModule } from 'ng2-completer';
 
 
 import { MatCardModule, MatButtonModule, MatInputModule, MatToolbarModule, MatListModule} from '@angular/material';
+import { PanierComponent } from './panier/panier.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { MatCardModule, MatButtonModule, MatInputModule, MatToolbarModule, MatLi
     InscriptionComponent,
     IndexComponent,
     FilterPipe,
-    ProductprintComponent, 
+    ProductprintComponent,
+    PanierComponent, 
 
   ],
   imports: [
