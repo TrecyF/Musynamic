@@ -27,7 +27,7 @@ export class ProduitService {
   }
   
   getNom(nomProduit: string): Observable<any> {
-    return this.http.get(this.produitUrl + '/musynamic/products/search/' + nomProduit);
+    return this.http.get(this.produitUrl + '/musynamic/products/search?nom=' + nomProduit);
   }
 
   /*public deleteProduit(produit) {

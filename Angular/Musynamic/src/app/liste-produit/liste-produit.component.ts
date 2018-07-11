@@ -34,7 +34,7 @@ export class ProduitComponent implements OnInit, OnDestroy {
   }
 
   ajouter(produit: Produit){
-
+    console.log(sessionStorage.length)
     sessionStorage.setItem('panier',produit.nom);
       console.log('ajouter dans le panier');
       console.log(sessionStorage.getItem('panier'));

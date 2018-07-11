@@ -64,12 +64,7 @@ get(nomProduit: string){
   }
 
 
-  let nameControl = new FormControl("Produit");
-  let name = nameControl.value;
 
-  nameControl.errors // -> StringMap<string, any> of errors
-nameControl.dirty  // -> false
-nameControl.valid  // -> true 
 
 
 
