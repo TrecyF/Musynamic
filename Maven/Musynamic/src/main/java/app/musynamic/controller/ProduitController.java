@@ -76,4 +76,10 @@ public class ProduitController {
         return produitService.update(produit);
     }
     
+    @GetMapping(value="products/search", produces = "application/json" )
+    public List<Produit> searchByNom(@RequestParam String nom){
+    	
+    	return produitService.SeachNom(nom);
+    }
+    
 }

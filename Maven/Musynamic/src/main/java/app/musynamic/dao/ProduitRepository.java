@@ -19,5 +19,7 @@ public interface ProduitRepository extends CrudRepository<Produit, String> {
 	//Produit findOne(int idProduit);
 
 	Produit save(Produit produit);
+	
+	List<Produit> findByNom(String nom);
 }
 	

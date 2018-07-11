@@ -12,5 +12,6 @@ export class Header {
         this.inscription = inscription;
         this.logo = require('../img/logo-petit.png');
     }
+    
 
 }

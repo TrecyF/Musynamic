@@ -20,6 +20,10 @@ public interface ProduitService {
 
 		void create(String nom, Type type, String description, LocalDate date_de_parution, String interprete, int stock,
 				int prix, String photo);
+
+		
+
+		List<Produit> SeachNom(String nom);
 	
 	
 }
