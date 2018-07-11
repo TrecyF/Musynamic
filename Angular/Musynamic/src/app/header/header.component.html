@@ -70,11 +70,12 @@
                   <br>
                   <p>Musynamic est la pour vous aider</p>
                   <br>
-                  <form class="form-inline md-form form-sm active-cyan-2">
-                    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Rechercher un produit" aria-label="Search" mdbInputDirective>
-                    
-                    <button (ngSubmit)="search" class="btn aqua-gradient btn-rounded btn-sm my-0 waves-light" mdbWavesEffect type="submit"><i class="fa fa-search" aria-hidden="true"></i> Rechercher</button>
-                  </form>
+                  <form #produitForm="ngForm" class="form-inline md-form form-sm active-cyan-2" (ngSubmit)="search(produitForm.value)">
+                    <input [formControl]="name" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Rechercher un produit" aria-label="Search" mdbInputDirective id="tt">
+                      <button  class="btn aqua-gradient btn-rounded btn-sm my-0 waves-light" mdbWavesEffect type="submit"></button><i class="fa fa-search" aria-hidden="true"></i> Rechercher</button>
+
+                  
+                    </form>
                   
                 </div>
               </div>

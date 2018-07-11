@@ -77,3 +77,6 @@ footer > div.container > div > div.col-md-3.offset-md-1 > a > img{
 
 }
 
+.form-control:focus{
+    color:white;
+}
