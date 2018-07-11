@@ -1,86 +1,99 @@
-
-  <header class="h-100">
-    <!--Navbar-->
-<!--Navbar-->
-<mdb-navbar class="fond" SideClass="navbar navbar-expand-lg navbar-dark ">
+<header class="h-100">
+  <!--Navbar-->
+  <!--Navbar-->
+  <mdb-navbar class="fond" SideClass="navbar navbar-expand-lg navbar-dark ">
     <logo>
-  <a class="navbar-brand" routerLink="/accueil"><img src="{{head.logo}}"></a></logo>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+      <a class="navbar-brand" routerLink="/accueil">
+        <img src="{{head.logo}}">
+      </a>
+    </logo>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <links>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link waves-light" mdbWavesEffect routerLink="/accueil">Accueil
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-light" mdbWavesEffect routerLink="/boutique"> {{head.boutique}}</a>
-          </li>
-        
-          <li class="nav-item" *ngIf="authe() === null">
-            <a class="nav-link waves-light" mdbWavesEffect routerLink="/connexion"><i class="fa fa-sign-in"></i> {{head.connexion}}</a>
-          </li>
-          <li class="nav-item" *ngIf="authe() === null">
-            <a class="nav-link waves-light" mdbWavesEffect routerLink="/connexion"><i class="fa fa-user"></i> {{head.inscription}}</a>
-          </li>
-          
-          <li class="nav-item" *ngIf="authe() !== null">
-            <button type="button" class="nav-link waves-light" mdbWavesEffect (click)="logout()"><i class="fa fa-sign-out"></i>
+        <li class="nav-item active">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/accueil">Accueil
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/boutique"> {{head.boutique}}</a>
+        </li>
 
-              Déconnexion</button>
+        <li class="nav-item" *ngIf="authe() === null">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/connexion">
+            <i class="fa fa-sign-in"></i> {{head.connexion}}</a>
+        </li>
+        <li class="nav-item" *ngIf="authe() === null">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/connexion">
+            <i class="fa fa-user"></i> {{head.inscription}}</a>
+        </li>
+
+        <li class="nav-item" *ngIf="authe() !== null">
+          <button type="button" class="nav-link waves-light" mdbWavesEffect (click)="logout()">
+            <i class="fa fa-sign-out"></i>
+
+            Déconnexion</button>
         </li>
 
 
-          <li class="nav-item">
-              <a class="nav-link waves-light" mdbWavesEffect routerLink="/administrateur"> {{head.administrateur}}</a>
-            </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect routerLink="/administrateur"> {{head.administrateur}}</a>
+        </li>
 
-            
-            
-          
-        </ul>
-        <ul class="navbar-nav ml-auto nav-flex-icons">
-          <li class="nav-item">
-            <a class="nav-link waves-light" mdbWavesEffect>
-              <i class="fa fa-shopping-cart"></i>
-            </a>
-          </li>
-          
-          <li class="nav-item dropdown btn-group" dropdown >
-            <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect><i class="fa fa-user"></i>
-            </a>
-            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-              <a class="dropdown-item waves-light" href="#" mdbWavesEffect>Mon compte</a>
-              <a class="dropdown-item waves-light" href="#" mdbWavesEffect>Mes commandes</a>
-            </div>
-          </li>
-        </ul>
-      </links>
-</mdb-navbar>
+
+
+
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>
+            <i class="fa fa-shopping-cart"></i>
+          </a>
+        </li>
+
+        <li class="nav-item dropdown btn-group" dropdown>
+          <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <i class="fa fa-user"></i>
+          </a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" href="#" mdbWavesEffect>Mon compte</a>
+            <a class="dropdown-item waves-light" href="#" mdbWavesEffect>Mes commandes</a>
+          </div>
+        </li>
+      </ul>
+    </links>
+  </mdb-navbar>
   <!--/.Navbar -->
 
-          <!--/.Navbar -->
-          <div class="view intro-2" *ngIf="IsAccueil()">
-            <div class="full-bg-img">
-              <div class="mask rgba-purple-light flex-center">
-                <div class="recherche container text-center white-text wow fadeInUp">
-                  <h1>Vous recherchez un produit ?</h1>
-                  <br>
-                  <p>Musynamic est la pour vous aider</p>
-                  <br>
-                  <form #produitForm="ngForm" class="form-inline md-form form-sm active-cyan-2" (ngSubmit)="search(produitForm.value)">
-                    <input [formControl]="name" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Rechercher un produit" aria-label="Search" mdbInputDirective id="tt">
-                      <button  class="btn aqua-gradient btn-rounded btn-sm my-0 waves-light" mdbWavesEffect type="submit"></button><i class="fa fa-search" aria-hidden="true"></i> Rechercher</button>
-
-                  
-                    </form>
-                  
-                </div>
-              </div>
+  <!--/.Navbar -->
+  <div class="view intro-2" *ngIf="IsAccueil()">
+    <div class="full-bg-img">
+      <div class="mask rgba-purple-light flex-center">
+        <div class="recherche container text-center white-text wow fadeInUp">
+          <h1>Vous recherchez un produit ?</h1>
+          <br>
+          <p>Musynamic est la pour vous aider</p>
+          <br>
+          <!--form [formGroup]="formulaire" class="form-inline md-form form-sm active-cyan-2">
+            <input id="recherche" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Rechercher un produit" aria-label="Search"
+              mdbInputDirective>
+            <button class="btn aqua-gradient btn-rounded btn-sm my-0 waves-light" mdbWavesEffect type="submit" (click)="onSubmit()">
+              <i class="fa fa-search" aria-hidden="true"></i> Rechercher</button>
+          </form-->
+          <form [formGroup]="formulaire" class="form-inline md-form form-sm active-cyan-2">
+            <div class="form-group">
+              <input class="form-control form-control-sm mr-3 w-75" formControlName="recherche" type="text" placeholder="Rechercher un produit" aria-label="Search"
+              mdbInputDirective>
             </div>
-          </div>
-          <!-- /.Main -->
-    </header>
+            <button class="btn aqua-gradient btn-rounded btn-sm my-0 waves-light" mdbWavesEffect type="submit" (click)="onSubmit()"><i class="fa fa-search" aria-hidden="true"></i> Rechercher</button>
+          </form>
 
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.Main -->
+</header>

@@ -5,7 +5,8 @@ import { Observable } from '../../../node_modules/rxjs';
 import { HttpClient, HttpHeaderResponse, HttpHeaders } from '../../../node_modules/@angular/common/http';
 import { Produit } from '../produit';
 import { Http } from '../../../node_modules/@angular/http';
-import { NgForm, FormControl } from '../../../node_modules/@angular/forms';
+import { NgForm, FormControl, FormGroup, FormBuilder } from '../../../node_modules/@angular/forms';
+import { HeaderService } from '../header.service';
 
 
 const httpOptions = {
@@ -24,11 +25,22 @@ export class HeaderComponent implements OnInit {
   public produitUrl = '//localhost:8086';
   public PRODUIT_API = this.produitUrl + '/musynamic/products/search/';
 
-constructor(private router: Router, private http : HttpClient) { 
+  formulaire : FormGroup;
 
+constructor(private router: Router, private http : HttpClient, private fb : FormBuilder, private headerService: HeaderService) { 
+    this.formulaire = fb.group({
+      recherche:''
+    });
   }
 
+onSubmit(){
+  console.log(this.formulaire.get("recherche").value)
+    this.headerService.searchlol(this.formulaire.get("recherche").value)
+    .subscribe( data => {
+      this.produits = data;
 
+    });
+}
 
   public getProduits() {
     // return this.http.get('//localhost:8086/musynamic/products/search');
@@ -64,12 +76,7 @@ get(nomProduit: string){
   }
 
 
-  let nameControl = new FormControl("Produit");
-  let name = nameControl.value;
-
-  nameControl.errors // -> StringMap<string, any> of errors
-nameControl.dirty  // -> false
-nameControl.valid  // -> true 
+ 
 
 
 

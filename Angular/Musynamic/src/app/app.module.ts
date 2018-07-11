@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginService } from './login-service.service';
 import { ProduitService } from './produit.service';
@@ -36,6 +36,7 @@ import { Ng2CompleterModule } from 'ng2-completer';
 
 
 import { MatCardModule, MatButtonModule, MatInputModule, MatToolbarModule, MatListModule} from '@angular/material';
+import { HeaderService } from './header.service';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { MatCardModule, MatButtonModule, MatInputModule, MatToolbarModule, MatLi
     MatListModule,
     MatToolbarModule,
     HttpClientXsrfModule,
+    ReactiveFormsModule
         
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
@@ -83,6 +85,7 @@ import { MatCardModule, MatButtonModule, MatInputModule, MatToolbarModule, MatLi
     LoginService,
     ProduitService,
     PresentationProduitService,
+    HeaderService,
   {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

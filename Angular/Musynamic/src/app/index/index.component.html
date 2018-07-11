@@ -1,112 +1,32 @@
+<div class="col-md-12 title text-center">
+    <h2> Liste des produits</h2>
+    
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>type</th>
+        <th>nom</th>
 
-    <div class="container">
-      <!--Section: Products v.4-->
-      <section class="pb-3 text-center ">
+        <th>interprete</th>
+        <th>description</th>
+        <th>prix</th>
+        <th>stock</th>
+        <th>photo</th>
+      </tr>
+      </thead>
+      <tbody  ng-controller="listeproduits" ng-init="getProduits()">
+      <tr *ngFor="let produit of produits">
+        
+        <td>{{produit.type}}</td>
+        <td>{{produit.nom}}</td>
+       
+        <td>{{produit.interprete}}</td>
+        <td>{{produit.description}}</td>
+        <td>{{produit.prix}}</td>
+        <td>{{produit.stock}}</td>
+        <td>{{produit.photo}}</td>
 
-        <!--Section heading-->
-        <h2 class="h1 py-5">Our bestsellers</h2>
-        <!--Section description-->
-        <p class="grey-text mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse
-          quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
-
-        <!--Grid row-->
-        <div class="row">
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4">
-
-            <!--Collection card-->
-            <div class="card collection-card z-depth-1-half">
-              <!--Card image-->
-              <div class="view zoom waves-light" mdbWavesEffect>
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/5.jpg" class="img-fluid" alt="">
-                <div class="stripe dark">
-                  <a>
-                    <p>Red trousers
-                      <i class="fa fa-angle-right"></i>
-                    </p>
-                  </a>
-                </div>
-              </div>
-              <!--Card image-->
-            </div>
-            <!--Collection card-->
-
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4">
-
-            <!--Collection card-->
-            <div class="card collection-card z-depth-1-half">
-              <!--Card image-->
-              <div class="view zoom waves-light" mdbWavesEffect>
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/8.jpg" class="img-fluid" alt="">
-                <div class="stripe light">
-                  <a>
-                    <p>Sweatshirt
-                      <i class="fa fa-angle-right"></i>
-                    </p>
-                  </a>
-                </div>
-              </div>
-              <!--Card image-->
-            </div>
-            <!--Collection card-->
-
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4">
-
-            <!--Collection card-->
-            <div class="card collection-card z-depth-1-half">
-              <!--Card image-->
-              <div class="view zoom waves-light" mdbWavesEffect>
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/9.jpg" class="img-fluid" alt="">
-                <div class="stripe dark">
-                  <a>
-                    <p>Accessories
-                      <i class="fa fa-angle-right"></i>
-                    </p>
-                  </a>
-                </div>
-              </div>
-              <!--Card image-->
-            </div>
-            <!--Collection card-->
-
-          </div>
-          <!--Grid column-->
-
-          <!--Fourth column-->
-          <div class="col-lg-3 col-md-6 mb-4">
-
-            <!--Collection card-->
-            <div class="card collection-card z-depth-1-half">
-              <!--Card image-->
-              <div class="view zoom waves-light" mdbWavesEffect>
-                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/7.jpg" class="img-fluid" alt="">
-                <div class="stripe light">
-                  <a>
-                    <p>Sweatshirt
-                      <i class="fa fa-angle-right"></i>
-                    </p>
-                  </a>
-                </div>
-              </div>
-              <!--Card image-->
-            </div>
-            <!--Collection card-->
-
-          </div>
-          <!--Fourth column-->
-
-        </div>
-        <!--Grid row-->
-
-      </section>
-      <!--Section: Products v.4-->
+      </tr>
+      </tbody>
+    </table>
     </div>
