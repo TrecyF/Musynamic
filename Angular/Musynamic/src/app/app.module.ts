@@ -36,7 +36,11 @@ import { Ng2CompleterModule } from 'ng2-completer';
 
 
 import { MatCardModule, MatButtonModule, MatInputModule, MatToolbarModule, MatListModule} from '@angular/material';
+
 import { HeaderService } from './header.service';
+
+import { PanierComponent } from './panier/panier.component';
+
 
 @NgModule({
   declarations: [
@@ -56,7 +60,8 @@ import { HeaderService } from './header.service';
     InscriptionComponent,
     IndexComponent,
     FilterPipe,
-    ProductprintComponent, 
+    ProductprintComponent,
+    PanierComponent, 
 
   ],
   imports: [

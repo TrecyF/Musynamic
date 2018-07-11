@@ -39,7 +39,16 @@ public class MusynamicApplication implements CommandLineRunner {
     			"astierflorent@gmail.com", 
     			LocalDate.of(2016, 06, 26), 
     			"jaimeLaFondue123", 
-    			"");
+    			"READ");    	
+    	utilisateurService.addUtilisateur(
+    			"Trecy", 
+    			"Fermier", 
+    			"Marcel amont", 
+    			"0631731014", 
+    			"astierflorent@gmail.com", 
+    			LocalDate.of(2016, 06, 26), 
+    			"admin", 
+    			"ADMIN");
     
     	System.out.println("-*------------------------******-------------- **---- **- --- -- jhghkgcjhcjhcjhgchj");
     	produitService.create(

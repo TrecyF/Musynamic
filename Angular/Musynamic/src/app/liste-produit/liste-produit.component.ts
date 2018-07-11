@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ProduitService } from '../produit.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Produit } from '../produit';
 
 
 @Component({
@@ -31,6 +32,16 @@ export class ProduitComponent implements OnInit, OnDestroy {
   gotoList() {
     this.router.navigate(['createproduct/listeprod']);
   }
+
+  ajouter(produit: Produit){
+    console.log(sessionStorage.length)
+    sessionStorage.setItem('panier',produit.nom);
+      console.log('ajouter dans le panier');
+      console.log(sessionStorage.getItem('panier'));
+  }
+
+
+
 
   remove(href) {
     this.produitService.deleteProduit(href)

@@ -43,8 +43,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
        .and().authorizeRequests()
        .antMatchers("/**","/musynamic/login", "/musynamic/hello","/musynamic/lolilol" ).permitAll()
+
        //.antMatchers("/musynamic/lolilol").access("hasRole('ROLE_READ')")
       // .anyRequest().authenticated()
+
+       //.antMatchers("/musynamic/login").permitAll()
+       //.antMatchers("/musynamic/lolilol").access("hasRole('ROLE_CACA')")
+       .anyRequest().authenticated()
+
        .and().httpBasic()
        .and().csrf().disable()
 	   .addFilterBefore(new WebSecurityCorsFilter(), ChannelProcessingFilter.class);

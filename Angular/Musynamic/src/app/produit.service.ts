@@ -25,6 +25,10 @@ export class ProduitService {
   get(idProduit: string) {
     return this.http.get(this.PRODUIT_API + '/' + idProduit);
   }
+  
+  getNom(nomProduit: string): Observable<any> {
+    return this.http.get(this.produitUrl + '/musynamic/products/search?nom=' + nomProduit);
+  }
 
   /*public deleteProduit(produit) {
     return this.http.delete(this.produitUrl + "/"+ produit.id);
@@ -33,6 +37,17 @@ export class ProduitService {
   /*public createProduit(produit) {
     return this.http.post(this.produitUrl, produit);
   }*/
+
+  // ajouterPanier(produit: any){
+  //   let res: Observable<Object>;
+  //   console.log('1');
+  //   if (produit['href']) {
+      
+  //     sessionStorage.setItem('panier',produit);
+  //     console.log('ajouter dans le panier');
+  //   }
+  //   return res;
+  // }
 
   deleteProduit(produit: any) {
     //return this.http.delete(href);

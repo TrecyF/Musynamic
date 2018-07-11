@@ -30,6 +30,7 @@ export class AddProduitComponent {
       this.gotoList();
     }, error => console.error(error));
   }
+  
 
   /*ngOnInit() {
     this.sub = this.route.params.subscribe(params => {

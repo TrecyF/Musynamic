@@ -11,6 +11,7 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
 import { ListeCommandeComponent } from './liste-commande/liste-commande.component';
 import { ProduitComponent } from './liste-produit/liste-produit.component';
 import { AddProduitComponent } from './add-produit/add-produit.component';
+import { PanierComponent } from './panier/panier.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'listecmd', component: ListeCommandeComponent },
   { path: 'listeprod', component: ProduitComponent },
   { path: 'addprod', component: AddProduitComponent },
+  { path: 'panier', component: PanierComponent},
 ];
 
 @NgModule({
